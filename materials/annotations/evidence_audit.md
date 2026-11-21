@@ -132,3 +132,13 @@
 | C4 | 4 | 5 |
 | C5 | 3 | 6 |
 | **合计** | **47** | **61** |
+
+---
+
+## 人工核验补记（A 侧，2026-11-21）
+
+- 核验人：标注员 A；仓库 HEAD `33660ed`。
+- 方法：下载 12 台固件（SHA-256 与 `materials/固件获取记录.md` 全对）→ WSL binwalk 解包 12/12 → 198 条 evidence 的 `raw_ref` 逐条打开原文核对 token（行号/`@0x` 偏移）；A2 运行时 3 条核对 `materials/firmae/dcs_*.txt`。
+- 结果：108 格 **47 found / 61 not_tested / 0 clear / 0 TODO**；本表 108 行 ID 集合、E1/E2/E3 计数、raw_ref 与 evidence 完全一致（0 差异）；A 文件标签 **0 处需改**；198/198 raw_ref 可定位、198/198 token 命中。
+- 证据质量（不属本表数据错误，属 `src/evidence.py` 提取规则误报）：27 条 EGRESS/CRED_HARDCODED 证据把标准文档 URL（iana/lanana/linuxbase/freebsd/broadband-forum）、HTML 超链接/帮助文本、工厂测试标记当成风险证据；其中 **11 格 found 仅靠误报证据**、4 格部分可疑。建议修规则并重生成 evidence 后再算双人标注。
+- 明细：`materials/annotations/annotator_A_核验记录.md`、`materials/annotations/annotator_A_核验明细.json`。

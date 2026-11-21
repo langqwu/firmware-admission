@@ -1,0 +1,1583 @@
+{
+  "reviewer": "semantic-verifier",
+  "repo_head": "33660ed",
+  "generated_at": "2026-11-21T15:33:56+08:00",
+  "counts": {
+    "confirm": 101,
+    "correct": 6,
+    "unsure": 1
+  },
+  "cells": [
+    {
+      "firmware": "A1",
+      "check": "CRED_DEFAULT_ADMIN_WEB",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A1-0001"
+      ],
+      "raw_refs": [
+        "webroot_ro/default.cfg:48"
+      ],
+      "reason": "语义成立：default.cfg 中 Web 管理口令字段 sys.baseuserpass 属默认口令类静态证据；摘录「静态发现口令字段 sys.baseuserpass（值已脱敏，长度 8）；是否默认/可用待实测 TODO(measure」"
+    },
+    {
+      "firmware": "A1",
+      "check": "CRED_DEFAULT_SERVICE_LOGIN",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A1-0002"
+      ],
+      "raw_refs": [
+        "etc_ro/passwd:1"
+      ],
+      "reason": "语义成立：etc/passwd 内可登录 shell 账号（root/admin/support/user 等）及 FTP/Samba 口令字段，属服务默认凭据类静态证据；摘录「静态发现可登录账号 root（uid=0, shell=/bin/sh）；是否为默认口令待影子设备实测 TODO(mea」"
+    },
+    {
+      "firmware": "A1",
+      "check": "CRED_HARDCODED_SECRET",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A1-0003",
+        "E-A1-0004"
+      ],
+      "raw_refs": [
+        "etc_ro/prod-script:363",
+        "etc_ro/shadow:1"
+      ],
+      "reason": "语义成立：etc/shadow 内 root 口令哈希（MD5-crypt）及口令字段属固件内硬编码口令密钥类静态证据；摘录「静态发现口令字段 old_password（值已脱敏，长度 4）；是否默认/可用待实测 TODO(measure)」"
+    },
+    {
+      "firmware": "A1",
+      "check": "UNAUTH_MGMT_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A1-0009",
+        "E-A1-0010",
+        "E-A1-0011",
+        "E-A1-0012",
+        "E-A1-0013",
+        "E-A1-0014",
+        "E-A1-0015",
+        "E-A1-0016",
+        "E-A1-0017",
+        "E-A1-0018",
+        "E-A1-0019",
+        "E-A1-0020",
+        "E-A1-0021",
+        "E-A1-0022",
+        "E-A1-0023",
+        "E-A1-0024",
+        "E-A1-0025",
+        "E-A1-0026",
+        "E-A1-0027",
+        "E-A1-0028",
+        "E-A1-0029",
+        "E-A1-0030",
+        "E-A1-0031",
+        "E-A1-0032"
+      ],
+      "raw_refs": [
+        "bin/httpd@0x6e27c",
+        "bin/httpd@0x75be8",
+        "bin/httpd@0x75bf4",
+        "bin/httpd@0x75c10",
+        "bin/httpd@0x75c20",
+        "bin/httpd@0x75c48",
+        "bin/httpd@0x75c58",
+        "bin/httpd@0x75c6c",
+        "bin/httpd@0x75c84",
+        "bin/httpd@0x75c9c",
+        "bin/httpd@0x75cd4",
+        "bin/httpd@0x75cf0",
+        "bin/httpd@0x75d0c",
+        "bin/httpd@0x75d28",
+        "bin/httpd@0x75d3c",
+        "bin/httpd@0x75d50",
+        "bin/httpd@0x75d98",
+        "webroot_ro/app.js:338",
+        "webroot_ro/goform/clearSyslog/index.html:2",
+        "webroot_ro/goform/test/index.html:2",
+        "webroot_ro/js/system_config.js:177",
+        "webroot_ro/js/system_status.js:31",
+        "webroot_ro/js/wrl_advance.js:138",
+        "webroot_ro/js/wrl_basic.js:896"
+      ],
+      "reason": "语义成立：共 24 条管理接口路径（如 /cgi-bin/upgrade）属管理接口类静态证据；鉴权状态未验证；摘录「静态发现接口 /cgi-bin/upgrade；鉴权状态未验证，需影子设备实测 TODO(measure)」"
+    },
+    {
+      "firmware": "A1",
+      "check": "UNAUTH_COMMAND_EXEC",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "/goform/ate、/goform/telnet 仅为接口名字符串，无命令注入实测，不构成证据"
+    },
+    {
+      "firmware": "A1",
+      "check": "UNAUTH_INFO_DISCLOSURE",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_INFO_DISCLOSURE 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "A1",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A1-0005",
+        "E-A1-0006",
+        "E-A1-0007",
+        "E-A1-0008"
+      ],
+      "raw_refs": [
+        "bin/httpd@0x751f8",
+        "bin/httpd@0x75218",
+        "bin/httpd@0x75238",
+        "webroot_ro/goform/getCloud/index.html:6"
+      ],
+      "reason": "语义成立：二进制 httpd 与 getCloud 页面硬编码 cloudfi.tendacn.com / ims、imsen.ip-com.com.cn / cloudfi.tenda.com.cn，属厂商云平台外联地址；摘录「静态发现二进制内 https 外联地址 host=cloudfi.tendacn.com；域名归属与外联行为未验证 TO」"
+    },
+    {
+      "firmware": "A1",
+      "check": "EGRESS_PLAINTEXT_CHANNEL",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_PLAINTEXT_CHANNEL 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "A1",
+      "check": "EGRESS_UNREGISTERED_THIRD_PARTY",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "静态含并非 Tenda 的 ip-com.com.cn 域名，但本项要求抓包对照厂商域名清单，无运行时证据，维持 not_tested（建议后续复核）"
+    },
+    {
+      "firmware": "A2",
+      "check": "CRED_DEFAULT_ADMIN_WEB",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A2-E1-0001"
+      ],
+      "raw_refs": [
+        "materials/firmae/dcs_login_home_headers.txt:1"
+      ],
+      "reason": "语义成立：E1 默认口令实测：HTTP Basic admin/空口令返回 200 并取到 /home.asp 管理页（38,782 字节）；摘录「DCS-960L 1.07.102 影子设备；HTTP Basic admin/空口令返回 200，/home.asp 」"
+    },
+    {
+      "firmware": "A2",
+      "check": "CRED_DEFAULT_SERVICE_LOGIN",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "运行时 3 条 + 静态 4 条证据中均无 CRED_DEFAULT_SERVICE_LOGIN 条目，亦无实测记录，维持 not_tested"
+    },
+    {
+      "firmware": "A2",
+      "check": "CRED_HARDCODED_SECRET",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A2-0001"
+      ],
+      "raw_refs": [
+        "etc/rc.d/init.d/pppoe.sh:8"
+      ],
+      "reason": "语义成立：/etc/rc.d/init.d/pppoe.sh 内口令字段 pppoepwd（长度 11），属固件内硬编码口令类静态证据；摘录「静态发现口令字段 pppoepwd（值已脱敏，长度 11）；是否默认/可用待实测 TODO(measure)」"
+    },
+    {
+      "firmware": "A2",
+      "check": "UNAUTH_MGMT_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A2-E2-0001",
+        "E-A2-0003",
+        "E-A2-0004"
+      ],
+      "raw_refs": [
+        "materials/firmae/dcs_login_hnap.txt:1",
+        "etc/httpd.ini:2",
+        "usr/sbin/eventd@0x22690"
+      ],
+      "reason": "语义成立：共 3 条管理接口路径（如 /HNAP1/）属管理接口类静态证据；鉴权状态未验证；摘录「DCS-960L 1.07.102 影子设备；未认证 GET /HNAP1/ 返回 200 与 GetDeviceSet」"
+    },
+    {
+      "firmware": "A2",
+      "check": "UNAUTH_COMMAND_EXEC",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "运行时 3 条 + 静态 4 条证据中均无 UNAUTH_COMMAND_EXEC 条目，亦无实测记录，维持 not_tested"
+    },
+    {
+      "firmware": "A2",
+      "check": "UNAUTH_INFO_DISCLOSURE",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A2-E2-0002"
+      ],
+      "raw_refs": [
+        "materials/firmae/dcs_login_hnap.txt:1"
+      ],
+      "reason": "语义成立：E2：未认证 HNAP 200 响应泄露型号/固件/硬件/MAC，属未授权信息披露；摘录「未认证 HNAP 响应泄露型号/固件/硬件/MAC（DCS-960L / A1 / 1.07 / 52:54:00:12」"
+    },
+    {
+      "firmware": "A2",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "unsure",
+      "evidence_ids": [
+        "E-A2-0002"
+      ],
+      "raw_refs": [
+        "web/cgi-bin/home.asp:619"
+      ],
+      "reason": "唯一证据 E-A2-0002 为 web/cgi-bin/home.asp:619 硬编码的 www.dlink.com（厂商官网）。D-Link 是设备厂商，字面上属『厂商服务端地址』；但该 ref 位于管理页模板，可能是超链接/版权链而非实际外联调用地址，且本固件无二进制/API 云端点证据。raw 不在仓库内无法复核上下文，语义存疑，建议人工查看原文后裁决（若为页面超链接则宜改 not_tested）"
+    },
+    {
+      "firmware": "A2",
+      "check": "EGRESS_PLAINTEXT_CHANNEL",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "运行时仅探测本机管理面明文 HTTP（443 连接被拒），未做外联抓包；该项源为影子设备抓包，维持 not_tested（管理面明文属另一问题，不属本项）"
+    },
+    {
+      "firmware": "A2",
+      "check": "EGRESS_UNREGISTERED_THIRD_PARTY",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "运行时 3 条 + 静态 4 条证据中均无 EGRESS_UNREGISTERED_THIRD_PARTY 条目，亦无实测记录，维持 not_tested"
+    },
+    {
+      "firmware": "A3",
+      "check": "CRED_DEFAULT_ADMIN_WEB",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A3-0001"
+      ],
+      "raw_refs": [
+        "webroot_ro/default.cfg:262"
+      ],
+      "reason": "语义成立：default.cfg 中 Web 管理口令字段 sys.baseuserpass 属默认口令类静态证据；摘录「静态发现口令字段 sys.baseuserpass（值已脱敏，长度 4）；是否默认/可用待实测 TODO(measure」"
+    },
+    {
+      "firmware": "A3",
+      "check": "CRED_DEFAULT_SERVICE_LOGIN",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A3-0002",
+        "E-A3-0003",
+        "E-A3-0004",
+        "E-A3-0005",
+        "E-A3-0006",
+        "E-A3-0007",
+        "E-A3-0008",
+        "E-A3-0009"
+      ],
+      "raw_refs": [
+        "etc_ro/passwd:1",
+        "etc_ro/passwd:2",
+        "etc_ro/passwd:3",
+        "etc_ro/passwd:4",
+        "etc_ro/passwd:5",
+        "webroot_ro/default.cfg:315",
+        "webroot_ro/default.cfg:323",
+        "webroot_ro/default.cfg:328"
+      ],
+      "reason": "语义成立：etc/passwd 内可登录 shell 账号（root/admin/support/user 等）及 FTP/Samba 口令字段，属服务默认凭据类静态证据；摘录「静态发现可登录账号 root（uid=0, shell=/bin/sh）；是否为默认口令待影子设备实测 TODO(mea」"
+    },
+    {
+      "firmware": "A3",
+      "check": "CRED_HARDCODED_SECRET",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A3-0010"
+      ],
+      "raw_refs": [
+        "etc_ro/shadow:1"
+      ],
+      "reason": "语义成立：etc/shadow 内 root 口令哈希（MD5-crypt）及口令字段属固件内硬编码口令密钥类静态证据；摘录「静态发现 root 口令哈希（算法 MD5-crypt）；弱口令/默认口令待实测 TODO(measure)」"
+    },
+    {
+      "firmware": "A3",
+      "check": "UNAUTH_MGMT_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A3-0016",
+        "E-A3-0017",
+        "E-A3-0018",
+        "E-A3-0019",
+        "E-A3-0020",
+        "E-A3-0021",
+        "E-A3-0022",
+        "E-A3-0023",
+        "E-A3-0024",
+        "E-A3-0025",
+        "E-A3-0026",
+        "E-A3-0027",
+        "E-A3-0028",
+        "E-A3-0029",
+        "E-A3-0030",
+        "E-A3-0031",
+        "E-A3-0032",
+        "E-A3-0033",
+        "E-A3-0034",
+        "E-A3-0035",
+        "E-A3-0036"
+      ],
+      "raw_refs": [
+        "bin/httpd@0xd4220",
+        "bin/httpd@0xd4238",
+        "bin/httpd@0xd4250",
+        "bin/httpd@0xd4268",
+        "bin/httpd@0xd4b6c",
+        "bin/httpd@0xd4b88",
+        "bin/httpd@0xd4ba0",
+        "bin/httpd@0xd4bac",
+        "bin/httpd@0xd4bd0",
+        "bin/httpd@0xd4bec",
+        "bin/httpd@0xd4c00",
+        "bin/httpd@0xd4cd4",
+        "bin/httpd@0xd4cec",
+        "bin/httpd@0xd4d08",
+        "bin/httpd@0xd4d58",
+        "etc_ro/nginx/conf/nginx.conf:48",
+        "webroot_ro/directupgrade.html:27",
+        "webroot_ro/js/dlna.js:134",
+        "webroot_ro/system_backup.html:15",
+        "webroot_ro/system_password.html:15",
+        "webroot_ro/system_reboot.html:15"
+      ],
+      "reason": "语义成立：共 21 条管理接口路径（如 /cgi-bin/DownloadCfg）属管理接口类静态证据；鉴权状态未验证；摘录「静态发现接口 /cgi-bin/DownloadCfg；鉴权状态未验证，需影子设备实测 TODO(measure)」"
+    },
+    {
+      "firmware": "A3",
+      "check": "UNAUTH_COMMAND_EXEC",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_COMMAND_EXEC 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "A3",
+      "check": "UNAUTH_INFO_DISCLOSURE",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "证据中 /cgi-bin/DownloadCfg、DownloadSyslog、DownloadLog 等条目均挂 UNAUTH_MGMT_ENDPOINT，未验证未授权读取，不构成本项证据"
+    },
+    {
+      "firmware": "A3",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A3-0011",
+        "E-A3-0012",
+        "E-A3-0013",
+        "E-A3-0014",
+        "E-A3-0015"
+      ],
+      "raw_refs": [
+        "bin/phddns@0xd3f5",
+        "webroot_ro/default.cfg:86",
+        "webroot_ro/goform/WifiPowerGet.txt:4",
+        "webroot_ro/index.html:399",
+        "webroot_ro/xunleiDownload.html:40"
+      ],
+      "reason": "语义成立：phddns 二进制内 www.oray.com（云端 DDNS 平台）与 default.cfg www.tenda.com.cn 等硬编码云端/厂商地址，属厂商/云平台外联地址；摘录「静态发现二进制内 http 外联地址 host=www.oray.com；域名归属与外联行为未验证 TODO(measu」"
+    },
+    {
+      "firmware": "A3",
+      "check": "EGRESS_PLAINTEXT_CHANNEL",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_PLAINTEXT_CHANNEL 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "A3",
+      "check": "EGRESS_UNREGISTERED_THIRD_PARTY",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "静态有第三方域名（yunos/xunlei/oray）但本项定义为抓包对照厂商域名清单，无运行时证据，维持 not_tested"
+    },
+    {
+      "firmware": "A3-19",
+      "check": "CRED_DEFAULT_ADMIN_WEB",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A3-19-0001"
+      ],
+      "raw_refs": [
+        "webroot_ro/default.cfg:262"
+      ],
+      "reason": "语义成立：default.cfg 中 Web 管理口令字段 sys.baseuserpass 属默认口令类静态证据；摘录「静态发现口令字段 sys.baseuserpass（值已脱敏，长度 4）；是否默认/可用待实测 TODO(measure」"
+    },
+    {
+      "firmware": "A3-19",
+      "check": "CRED_DEFAULT_SERVICE_LOGIN",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A3-19-0002",
+        "E-A3-19-0003",
+        "E-A3-19-0004",
+        "E-A3-19-0005",
+        "E-A3-19-0006",
+        "E-A3-19-0007",
+        "E-A3-19-0008",
+        "E-A3-19-0009"
+      ],
+      "raw_refs": [
+        "etc_ro/passwd:1",
+        "etc_ro/passwd:2",
+        "etc_ro/passwd:3",
+        "etc_ro/passwd:4",
+        "etc_ro/passwd:5",
+        "webroot_ro/default.cfg:315",
+        "webroot_ro/default.cfg:323",
+        "webroot_ro/default.cfg:328"
+      ],
+      "reason": "语义成立：etc/passwd 内可登录 shell 账号（root/admin/support/user 等）及 FTP/Samba 口令字段，属服务默认凭据类静态证据；摘录「静态发现可登录账号 root（uid=0, shell=/bin/sh）；是否为默认口令待影子设备实测 TODO(mea」"
+    },
+    {
+      "firmware": "A3-19",
+      "check": "CRED_HARDCODED_SECRET",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A3-19-0010"
+      ],
+      "raw_refs": [
+        "etc_ro/shadow:1"
+      ],
+      "reason": "语义成立：etc/shadow 内 root 口令哈希（MD5-crypt）及口令字段属固件内硬编码口令密钥类静态证据；摘录「静态发现 root 口令哈希（算法 MD5-crypt）；弱口令/默认口令待实测 TODO(measure)」"
+    },
+    {
+      "firmware": "A3-19",
+      "check": "UNAUTH_MGMT_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A3-19-0016",
+        "E-A3-19-0017",
+        "E-A3-19-0018",
+        "E-A3-19-0019",
+        "E-A3-19-0020",
+        "E-A3-19-0021",
+        "E-A3-19-0022",
+        "E-A3-19-0023",
+        "E-A3-19-0024",
+        "E-A3-19-0025",
+        "E-A3-19-0026",
+        "E-A3-19-0027",
+        "E-A3-19-0028",
+        "E-A3-19-0029",
+        "E-A3-19-0030",
+        "E-A3-19-0031"
+      ],
+      "raw_refs": [
+        "bin/httpd@0xd4080",
+        "bin/httpd@0xd4098",
+        "bin/httpd@0xd40b0",
+        "bin/httpd@0xd40c8",
+        "bin/httpd@0xd4a20",
+        "bin/httpd@0xd4a30",
+        "bin/httpd@0xd4a84",
+        "bin/httpd@0xd4a9c",
+        "bin/httpd@0xd4ab8",
+        "bin/httpd@0xd4b20",
+        "etc_ro/nginx/conf/nginx.conf:48",
+        "webroot_ro/directupgrade.html:27",
+        "webroot_ro/js/dlna.js:134",
+        "webroot_ro/system_backup.html:15",
+        "webroot_ro/system_password.html:15",
+        "webroot_ro/system_reboot.html:15"
+      ],
+      "reason": "语义成立：共 16 条管理接口路径（如 /cgi-bin/DownloadCfg）属管理接口类静态证据；鉴权状态未验证；摘录「静态发现接口 /cgi-bin/DownloadCfg；鉴权状态未验证，需影子设备实测 TODO(measure)」"
+    },
+    {
+      "firmware": "A3-19",
+      "check": "UNAUTH_COMMAND_EXEC",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_COMMAND_EXEC 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "A3-19",
+      "check": "UNAUTH_INFO_DISCLOSURE",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "证据中 /cgi-bin/DownloadCfg、DownloadSyslog、DownloadLog 等条目均挂 UNAUTH_MGMT_ENDPOINT，未验证未授权读取，不构成本项证据"
+    },
+    {
+      "firmware": "A3-19",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-A3-19-0011",
+        "E-A3-19-0012",
+        "E-A3-19-0013",
+        "E-A3-19-0014",
+        "E-A3-19-0015"
+      ],
+      "raw_refs": [
+        "bin/phddns@0xd3f5",
+        "webroot_ro/default.cfg:86",
+        "webroot_ro/goform/WifiPowerGet.txt:4",
+        "webroot_ro/index.html:406",
+        "webroot_ro/xunleiDownload.html:40"
+      ],
+      "reason": "语义成立：phddns 二进制内 www.oray.com（云端 DDNS 平台）与 default.cfg www.tenda.com.cn 等硬编码云端/厂商地址，属厂商/云平台外联地址；摘录「静态发现二进制内 http 外联地址 host=www.oray.com；域名归属与外联行为未验证 TODO(measu」"
+    },
+    {
+      "firmware": "A3-19",
+      "check": "EGRESS_PLAINTEXT_CHANNEL",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_PLAINTEXT_CHANNEL 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "A3-19",
+      "check": "EGRESS_UNREGISTERED_THIRD_PARTY",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "静态有第三方域名（yunos/xunlei/oray）但本项定义为抓包对照厂商域名清单，无运行时证据，维持 not_tested"
+    },
+    {
+      "firmware": "R1",
+      "check": "CRED_DEFAULT_ADMIN_WEB",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-R1-0001"
+      ],
+      "raw_refs": [
+        "webroot_ro/default.cfg:267"
+      ],
+      "reason": "语义成立：default.cfg 中 Web 管理口令字段 sys.baseuserpass 属默认口令类静态证据；摘录「静态发现口令字段 sys.baseuserpass（值已脱敏，长度 4）；是否默认/可用待实测 TODO(measure」"
+    },
+    {
+      "firmware": "R1",
+      "check": "CRED_DEFAULT_SERVICE_LOGIN",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-R1-0002",
+        "E-R1-0003",
+        "E-R1-0004",
+        "E-R1-0005",
+        "E-R1-0006",
+        "E-R1-0007",
+        "E-R1-0008",
+        "E-R1-0009"
+      ],
+      "raw_refs": [
+        "etc_ro/passwd:1",
+        "etc_ro/passwd:2",
+        "etc_ro/passwd:3",
+        "etc_ro/passwd:4",
+        "etc_ro/passwd:5",
+        "webroot_ro/default.cfg:320",
+        "webroot_ro/default.cfg:328",
+        "webroot_ro/default.cfg:330"
+      ],
+      "reason": "语义成立：etc/passwd 内可登录 shell 账号（root/admin/support/user 等）及 FTP/Samba 口令字段，属服务默认凭据类静态证据；摘录「静态发现可登录账号 root（uid=0, shell=/bin/sh）；是否为默认口令待影子设备实测 TODO(mea」"
+    },
+    {
+      "firmware": "R1",
+      "check": "CRED_HARDCODED_SECRET",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-R1-0010"
+      ],
+      "raw_refs": [
+        "etc_ro/shadow:1"
+      ],
+      "reason": "语义成立：etc/shadow 内 root 口令哈希（MD5-crypt）及口令字段属固件内硬编码口令密钥类静态证据；摘录「静态发现 root 口令哈希（算法 MD5-crypt）；弱口令/默认口令待实测 TODO(measure)」"
+    },
+    {
+      "firmware": "R1",
+      "check": "UNAUTH_MGMT_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-R1-0016",
+        "E-R1-0017",
+        "E-R1-0018",
+        "E-R1-0019",
+        "E-R1-0020",
+        "E-R1-0021",
+        "E-R1-0022",
+        "E-R1-0023",
+        "E-R1-0024",
+        "E-R1-0025",
+        "E-R1-0026",
+        "E-R1-0027",
+        "E-R1-0028",
+        "E-R1-0029",
+        "E-R1-0030",
+        "E-R1-0031",
+        "E-R1-0032",
+        "E-R1-0033",
+        "E-R1-0034",
+        "E-R1-0035",
+        "E-R1-0036"
+      ],
+      "raw_refs": [
+        "bin/httpd@0xd2578",
+        "bin/httpd@0xd2590",
+        "bin/httpd@0xd25a8",
+        "bin/httpd@0xd25c0",
+        "bin/httpd@0xd2ec4",
+        "bin/httpd@0xd2ee0",
+        "bin/httpd@0xd2ef8",
+        "bin/httpd@0xd2f04",
+        "bin/httpd@0xd2f28",
+        "bin/httpd@0xd2f44",
+        "bin/httpd@0xd2f58",
+        "bin/httpd@0xd302c",
+        "bin/httpd@0xd3044",
+        "bin/httpd@0xd3060",
+        "bin/httpd@0xd30b0",
+        "etc_ro/nginx/conf/nginx.conf:48",
+        "webroot_ro/directupgrade.html:27",
+        "webroot_ro/js/dlna.js:134",
+        "webroot_ro/system_backup.html:15",
+        "webroot_ro/system_password.html:15",
+        "webroot_ro/system_reboot.html:15"
+      ],
+      "reason": "语义成立：共 21 条管理接口路径（如 /cgi-bin/DownloadCfg）属管理接口类静态证据；鉴权状态未验证；摘录「静态发现接口 /cgi-bin/DownloadCfg；鉴权状态未验证，需影子设备实测 TODO(measure)」"
+    },
+    {
+      "firmware": "R1",
+      "check": "UNAUTH_COMMAND_EXEC",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_COMMAND_EXEC 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "R1",
+      "check": "UNAUTH_INFO_DISCLOSURE",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "证据中 /cgi-bin/DownloadCfg、DownloadSyslog、DownloadLog 等条目均挂 UNAUTH_MGMT_ENDPOINT，未验证未授权读取，不构成本项证据"
+    },
+    {
+      "firmware": "R1",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-R1-0011",
+        "E-R1-0012",
+        "E-R1-0013",
+        "E-R1-0014",
+        "E-R1-0015"
+      ],
+      "raw_refs": [
+        "bin/phddns@0xd3f5",
+        "webroot_ro/default.cfg:87",
+        "webroot_ro/goform/WifiPowerGet.txt:4",
+        "webroot_ro/index.html:399",
+        "webroot_ro/xunleiDownload.html:40"
+      ],
+      "reason": "语义成立：phddns 二进制内 www.oray.com（云端 DDNS 平台）与 default.cfg www.tenda.com.cn 等硬编码云端/厂商地址，属厂商/云平台外联地址；摘录「静态发现二进制内 http 外联地址 host=www.oray.com；域名归属与外联行为未验证 TODO(measu」"
+    },
+    {
+      "firmware": "R1",
+      "check": "EGRESS_PLAINTEXT_CHANNEL",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_PLAINTEXT_CHANNEL 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "R1",
+      "check": "EGRESS_UNREGISTERED_THIRD_PARTY",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "静态有第三方域名（yunos/xunlei/oray）但本项定义为抓包对照厂商域名清单，无运行时证据，维持 not_tested"
+    },
+    {
+      "firmware": "R2",
+      "check": "CRED_DEFAULT_ADMIN_WEB",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-R2-0001"
+      ],
+      "raw_refs": [
+        "webroot_ro/default.cfg:264"
+      ],
+      "reason": "语义成立：default.cfg 中 Web 管理口令字段 sys.baseuserpass 属默认口令类静态证据；摘录「静态发现口令字段 sys.baseuserpass（值已脱敏，长度 4）；是否默认/可用待实测 TODO(measure」"
+    },
+    {
+      "firmware": "R2",
+      "check": "CRED_DEFAULT_SERVICE_LOGIN",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-R2-0002",
+        "E-R2-0003",
+        "E-R2-0004",
+        "E-R2-0005",
+        "E-R2-0006",
+        "E-R2-0007",
+        "E-R2-0008",
+        "E-R2-0009"
+      ],
+      "raw_refs": [
+        "etc_ro/passwd:1",
+        "etc_ro/passwd:2",
+        "etc_ro/passwd:3",
+        "etc_ro/passwd:4",
+        "etc_ro/passwd:5",
+        "webroot_ro/default.cfg:318",
+        "webroot_ro/default.cfg:326",
+        "webroot_ro/default.cfg:331"
+      ],
+      "reason": "语义成立：etc/passwd 内可登录 shell 账号（root/admin/support/user 等）及 FTP/Samba 口令字段，属服务默认凭据类静态证据；摘录「静态发现可登录账号 root（uid=0, shell=/bin/sh）；是否为默认口令待影子设备实测 TODO(mea」"
+    },
+    {
+      "firmware": "R2",
+      "check": "CRED_HARDCODED_SECRET",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-R2-0010"
+      ],
+      "raw_refs": [
+        "etc_ro/shadow:1"
+      ],
+      "reason": "语义成立：etc/shadow 内 root 口令哈希（MD5-crypt）及口令字段属固件内硬编码口令密钥类静态证据；摘录「静态发现 root 口令哈希（算法 MD5-crypt）；弱口令/默认口令待实测 TODO(measure)」"
+    },
+    {
+      "firmware": "R2",
+      "check": "UNAUTH_MGMT_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-R2-0016",
+        "E-R2-0017",
+        "E-R2-0018",
+        "E-R2-0019",
+        "E-R2-0020",
+        "E-R2-0021",
+        "E-R2-0022",
+        "E-R2-0023",
+        "E-R2-0024",
+        "E-R2-0025",
+        "E-R2-0026",
+        "E-R2-0027",
+        "E-R2-0028",
+        "E-R2-0029",
+        "E-R2-0030",
+        "E-R2-0031",
+        "E-R2-0032",
+        "E-R2-0033",
+        "E-R2-0034",
+        "E-R2-0035"
+      ],
+      "raw_refs": [
+        "bin/httpd@0xd048c",
+        "bin/httpd@0xd04a4",
+        "bin/httpd@0xd04bc",
+        "bin/httpd@0xd04d4",
+        "bin/httpd@0xd0dd8",
+        "bin/httpd@0xd0df4",
+        "bin/httpd@0xd0e0c",
+        "bin/httpd@0xd0e18",
+        "bin/httpd@0xd0e3c",
+        "bin/httpd@0xd0e58",
+        "bin/httpd@0xd0e6c",
+        "bin/httpd@0xd0f40",
+        "bin/httpd@0xd0f58",
+        "bin/httpd@0xd0f74",
+        "bin/httpd@0xd0fc4",
+        "webroot_ro/directupgrade.html:27",
+        "webroot_ro/js/dlna.js:134",
+        "webroot_ro/system_backup.html:15",
+        "webroot_ro/system_password.html:15",
+        "webroot_ro/system_reboot.html:15"
+      ],
+      "reason": "语义成立：共 20 条管理接口路径（如 /cgi-bin/DownloadCfg）属管理接口类静态证据；鉴权状态未验证；摘录「静态发现接口 /cgi-bin/DownloadCfg；鉴权状态未验证，需影子设备实测 TODO(measure)」"
+    },
+    {
+      "firmware": "R2",
+      "check": "UNAUTH_COMMAND_EXEC",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_COMMAND_EXEC 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "R2",
+      "check": "UNAUTH_INFO_DISCLOSURE",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "证据中 /cgi-bin/DownloadCfg、DownloadSyslog、DownloadLog 等条目均挂 UNAUTH_MGMT_ENDPOINT，未验证未授权读取，不构成本项证据"
+    },
+    {
+      "firmware": "R2",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-R2-0011",
+        "E-R2-0012",
+        "E-R2-0013",
+        "E-R2-0014",
+        "E-R2-0015"
+      ],
+      "raw_refs": [
+        "bin/phddns@0xd3f5",
+        "webroot_ro/default.cfg:86",
+        "webroot_ro/goform/WifiPowerGet.txt:4",
+        "webroot_ro/index.html:399",
+        "webroot_ro/xunleiDownload.html:40"
+      ],
+      "reason": "语义成立：phddns 二进制内 www.oray.com（云端 DDNS 平台）与 default.cfg www.tenda.com.cn 等硬编码云端/厂商地址，属厂商/云平台外联地址；摘录「静态发现二进制内 http 外联地址 host=www.oray.com；域名归属与外联行为未验证 TODO(measu」"
+    },
+    {
+      "firmware": "R2",
+      "check": "EGRESS_PLAINTEXT_CHANNEL",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_PLAINTEXT_CHANNEL 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "R2",
+      "check": "EGRESS_UNREGISTERED_THIRD_PARTY",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "静态有第三方域名（yunos/xunlei/oray）但本项定义为抓包对照厂商域名清单，无运行时证据，维持 not_tested"
+    },
+    {
+      "firmware": "R3",
+      "check": "CRED_DEFAULT_ADMIN_WEB",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 CRED_DEFAULT_ADMIN_WEB 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "R3",
+      "check": "CRED_DEFAULT_SERVICE_LOGIN",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 CRED_DEFAULT_SERVICE_LOGIN 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "R3",
+      "check": "CRED_HARDCODED_SECRET",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 CRED_HARDCODED_SECRET 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "R3",
+      "check": "UNAUTH_MGMT_ENDPOINT",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_MGMT_ENDPOINT 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "R3",
+      "check": "UNAUTH_COMMAND_EXEC",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_COMMAND_EXEC 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "R3",
+      "check": "UNAUTH_INFO_DISCLOSURE",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_INFO_DISCLOSURE 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "R3",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "correct_to_not_tested",
+      "evidence_ids": [
+        "E-R3-0001",
+        "E-R3-0002",
+        "E-R3-0003",
+        "E-R3-0004",
+        "E-R3-0005"
+      ],
+      "raw_refs": [
+        "etc/ethertypes:7",
+        "etc/init.d/p910nd:113",
+        "etc/init.d/p910nd:28",
+        "etc/services:8",
+        "sbin/tr069@0x65c40"
+      ],
+      "reason": "5 条证据全为 etc/ethertypes、/etc/services、init 脚本注释与 TR-069 数据模型中的标准组织/规范文档 URL（iana/lanana/linuxbase/freebsd/broadband-forum），非云平台或厂商服务端外联地址，不满足定义；R3 因此无可用 EGRESS 证据"
+    },
+    {
+      "firmware": "R3",
+      "check": "EGRESS_PLAINTEXT_CHANNEL",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_PLAINTEXT_CHANNEL 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "R3",
+      "check": "EGRESS_UNREGISTERED_THIRD_PARTY",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_UNREGISTERED_THIRD_PARTY 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C1",
+      "check": "CRED_DEFAULT_ADMIN_WEB",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 CRED_DEFAULT_ADMIN_WEB 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C1",
+      "check": "CRED_DEFAULT_SERVICE_LOGIN",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-C1t-0001"
+      ],
+      "raw_refs": [
+        "etc/passwd:1"
+      ],
+      "reason": "语义成立：etc/passwd 内可登录 root 账号（shell=/bin/ash），属服务登录账号类静态证据；摘录「静态发现可登录账号 root（uid=0, shell=/bin/ash）；是否为默认口令待影子设备实测 TODO(me」"
+    },
+    {
+      "firmware": "C1",
+      "check": "CRED_HARDCODED_SECRET",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 CRED_HARDCODED_SECRET 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C1",
+      "check": "UNAUTH_MGMT_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-C1t-0003"
+      ],
+      "raw_refs": [
+        "usr/sbin/uhttpd@0xeff0"
+      ],
+      "reason": "语义成立：共 1 条管理接口路径（如 /cgi-bin/luci）属管理接口类静态证据；鉴权状态未验证；摘录「静态发现接口 /cgi-bin/luci；鉴权状态未验证，需影子设备实测 TODO(measure)」"
+    },
+    {
+      "firmware": "C1",
+      "check": "UNAUTH_COMMAND_EXEC",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_COMMAND_EXEC 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C1",
+      "check": "UNAUTH_INFO_DISCLOSURE",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_INFO_DISCLOSURE 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C1",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "correct_to_not_tested",
+      "evidence_ids": [
+        "E-C1t-0002"
+      ],
+      "raw_refs": [
+        "etc/protocols:3"
+      ],
+      "reason": "唯一证据为 /etc/protocols 文件头的 www.iana.org 规范引用，属标准组织/文档 URL，非云平台或厂商服务端外联地址（与 C 侧其余固件同一提取噪声），不满足定义"
+    },
+    {
+      "firmware": "C1",
+      "check": "EGRESS_PLAINTEXT_CHANNEL",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_PLAINTEXT_CHANNEL 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C1",
+      "check": "EGRESS_UNREGISTERED_THIRD_PARTY",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_UNREGISTERED_THIRD_PARTY 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C2",
+      "check": "CRED_DEFAULT_ADMIN_WEB",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 CRED_DEFAULT_ADMIN_WEB 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C2",
+      "check": "CRED_DEFAULT_SERVICE_LOGIN",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-C2t-0001"
+      ],
+      "raw_refs": [
+        "etc/passwd:1"
+      ],
+      "reason": "语义成立：etc/passwd 内可登录 root 账号（shell=/bin/ash），属服务登录账号类静态证据；摘录「静态发现可登录账号 root（uid=0, shell=/bin/ash）；是否为默认口令待影子设备实测 TODO(me」"
+    },
+    {
+      "firmware": "C2",
+      "check": "CRED_HARDCODED_SECRET",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-C2t-0002"
+      ],
+      "raw_refs": [
+        "etc/init.d/wlan-manager:6"
+      ],
+      "reason": "语义成立：etc/init.d/wlan-manager 内口令字段 radio_pass（长度 7），属固件内硬编码口令类静态证据；摘录「静态发现口令字段 radio_pass（值已脱敏，长度 7）；是否默认/可用待实测 TODO(measure)」"
+    },
+    {
+      "firmware": "C2",
+      "check": "UNAUTH_MGMT_ENDPOINT",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_MGMT_ENDPOINT 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C2",
+      "check": "UNAUTH_COMMAND_EXEC",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_COMMAND_EXEC 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C2",
+      "check": "UNAUTH_INFO_DISCLOSURE",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_INFO_DISCLOSURE 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C2",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "correct_to_not_tested",
+      "evidence_ids": [
+        "E-C2t-0003"
+      ],
+      "raw_refs": [
+        "etc/protocols:3"
+      ],
+      "reason": "唯一证据为 /etc/protocols 文件头的 www.iana.org 规范引用，属标准组织/文档 URL，非云平台或厂商服务端外联地址（与 C 侧其余固件同一提取噪声），不满足定义"
+    },
+    {
+      "firmware": "C2",
+      "check": "EGRESS_PLAINTEXT_CHANNEL",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_PLAINTEXT_CHANNEL 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C2",
+      "check": "EGRESS_UNREGISTERED_THIRD_PARTY",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_UNREGISTERED_THIRD_PARTY 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C3",
+      "check": "CRED_DEFAULT_ADMIN_WEB",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 CRED_DEFAULT_ADMIN_WEB 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C3",
+      "check": "CRED_DEFAULT_SERVICE_LOGIN",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-C3t-0001"
+      ],
+      "raw_refs": [
+        "etc/passwd:1"
+      ],
+      "reason": "语义成立：etc/passwd 内可登录 root 账号（shell=/bin/ash），属服务登录账号类静态证据；摘录「静态发现可登录账号 root（uid=0, shell=/bin/ash）；是否为默认口令待影子设备实测 TODO(me」"
+    },
+    {
+      "firmware": "C3",
+      "check": "CRED_HARDCODED_SECRET",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-C3t-0002"
+      ],
+      "raw_refs": [
+        "etc/init.d/wlan-manager:6"
+      ],
+      "reason": "语义成立：etc/init.d/wlan-manager 内口令字段 radio_pass（长度 7），属固件内硬编码口令类静态证据；摘录「静态发现口令字段 radio_pass（值已脱敏，长度 7）；是否默认/可用待实测 TODO(measure)」"
+    },
+    {
+      "firmware": "C3",
+      "check": "UNAUTH_MGMT_ENDPOINT",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_MGMT_ENDPOINT 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C3",
+      "check": "UNAUTH_COMMAND_EXEC",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_COMMAND_EXEC 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C3",
+      "check": "UNAUTH_INFO_DISCLOSURE",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_INFO_DISCLOSURE 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C3",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "correct_to_not_tested",
+      "evidence_ids": [
+        "E-C3t-0003"
+      ],
+      "raw_refs": [
+        "etc/protocols:3"
+      ],
+      "reason": "唯一证据为 /etc/protocols 文件头的 www.iana.org 规范引用，属标准组织/文档 URL，非云平台或厂商服务端外联地址（与 C 侧其余固件同一提取噪声），不满足定义"
+    },
+    {
+      "firmware": "C3",
+      "check": "EGRESS_PLAINTEXT_CHANNEL",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_PLAINTEXT_CHANNEL 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C3",
+      "check": "EGRESS_UNREGISTERED_THIRD_PARTY",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_UNREGISTERED_THIRD_PARTY 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C4",
+      "check": "CRED_DEFAULT_ADMIN_WEB",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 CRED_DEFAULT_ADMIN_WEB 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C4",
+      "check": "CRED_DEFAULT_SERVICE_LOGIN",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-C4t-0001"
+      ],
+      "raw_refs": [
+        "etc/passwd:1"
+      ],
+      "reason": "语义成立：etc/passwd 内可登录 root 账号（shell=/bin/ash），属服务登录账号类静态证据；摘录「静态发现可登录账号 root（uid=0, shell=/bin/ash）；是否为默认口令待影子设备实测 TODO(me」"
+    },
+    {
+      "firmware": "C4",
+      "check": "CRED_HARDCODED_SECRET",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-C4t-0002"
+      ],
+      "raw_refs": [
+        "etc/init.d/wlan-manager:6"
+      ],
+      "reason": "语义成立：etc/init.d/wlan-manager 内口令字段 radio_pass（长度 7），属固件内硬编码口令类静态证据；摘录「静态发现口令字段 radio_pass（值已脱敏，长度 7）；是否默认/可用待实测 TODO(measure)」"
+    },
+    {
+      "firmware": "C4",
+      "check": "UNAUTH_MGMT_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-C4t-0004"
+      ],
+      "raw_refs": [
+        "usr/sbin/uhttpd@0xda55"
+      ],
+      "reason": "语义成立：共 1 条管理接口路径（如 /cgi-bin/luci）属管理接口类静态证据；鉴权状态未验证；摘录「静态发现接口 /cgi-bin/luci；鉴权状态未验证，需影子设备实测 TODO(measure)」"
+    },
+    {
+      "firmware": "C4",
+      "check": "UNAUTH_COMMAND_EXEC",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_COMMAND_EXEC 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C4",
+      "check": "UNAUTH_INFO_DISCLOSURE",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_INFO_DISCLOSURE 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C4",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "correct_to_not_tested",
+      "evidence_ids": [
+        "E-C4t-0003"
+      ],
+      "raw_refs": [
+        "etc/protocols:3"
+      ],
+      "reason": "唯一证据为 /etc/protocols 文件头的 www.iana.org 规范引用，属标准组织/文档 URL，非云平台或厂商服务端外联地址（与 C 侧其余固件同一提取噪声），不满足定义"
+    },
+    {
+      "firmware": "C4",
+      "check": "EGRESS_PLAINTEXT_CHANNEL",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_PLAINTEXT_CHANNEL 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C4",
+      "check": "EGRESS_UNREGISTERED_THIRD_PARTY",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_UNREGISTERED_THIRD_PARTY 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C5",
+      "check": "CRED_DEFAULT_ADMIN_WEB",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 CRED_DEFAULT_ADMIN_WEB 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C5",
+      "check": "CRED_DEFAULT_SERVICE_LOGIN",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-C5-0001"
+      ],
+      "raw_refs": [
+        "etc/passwd:1"
+      ],
+      "reason": "语义成立：etc/passwd 内可登录 root 账号（shell=/bin/ash），属服务登录账号类静态证据；摘录「静态发现可登录账号 root（uid=0, shell=/bin/ash）；是否为默认口令待影子设备实测 TODO(me」"
+    },
+    {
+      "firmware": "C5",
+      "check": "CRED_HARDCODED_SECRET",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 CRED_HARDCODED_SECRET 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C5",
+      "check": "UNAUTH_MGMT_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "confirm",
+      "evidence_ids": [
+        "E-C5-0003"
+      ],
+      "raw_refs": [
+        "usr/sbin/uhttpd@0xef70"
+      ],
+      "reason": "语义成立：共 1 条管理接口路径（如 /cgi-bin/luci）属管理接口类静态证据；鉴权状态未验证；摘录「静态发现接口 /cgi-bin/luci；鉴权状态未验证，需影子设备实测 TODO(measure)」"
+    },
+    {
+      "firmware": "C5",
+      "check": "UNAUTH_COMMAND_EXEC",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_COMMAND_EXEC 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C5",
+      "check": "UNAUTH_INFO_DISCLOSURE",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 UNAUTH_INFO_DISCLOSURE 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C5",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "correct_to_not_tested",
+      "evidence_ids": [
+        "E-C5-0002"
+      ],
+      "raw_refs": [
+        "etc/protocols:3"
+      ],
+      "reason": "唯一证据为 /etc/protocols 文件头的 www.iana.org 规范引用，属标准组织/文档 URL，非云平台或厂商服务端外联地址（与 C 侧其余固件同一提取噪声），不满足定义"
+    },
+    {
+      "firmware": "C5",
+      "check": "EGRESS_PLAINTEXT_CHANNEL",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_PLAINTEXT_CHANNEL 条目，且无实测/抓包记录，维持 not_tested"
+    },
+    {
+      "firmware": "C5",
+      "check": "EGRESS_UNREGISTERED_THIRD_PARTY",
+      "prefilled": "not_tested",
+      "verdict": "confirm",
+      "evidence_ids": [],
+      "raw_refs": [],
+      "reason": "该固件 evidence 无 EGRESS_UNREGISTERED_THIRD_PARTY 条目，且无实测/抓包记录，维持 not_tested"
+    }
+  ],
+  "deviations": [
+    {
+      "firmware": "A2",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "unsure",
+      "suggested": "待人工裁决（倾向 not_tested）",
+      "evidence_ids": [
+        "E-A2-0002"
+      ],
+      "raw_refs": [
+        "web/cgi-bin/home.asp:619"
+      ],
+      "reason": "唯一证据 E-A2-0002 为 web/cgi-bin/home.asp:619 硬编码的 www.dlink.com（厂商官网）。D-Link 是设备厂商，字面上属『厂商服务端地址』；但该 ref 位于管理页模板，可能是超链接/版权链而非实际外联调用地址，且本固件无二进制/API 云端点证据。raw 不在仓库内无法复核上下文，语义存疑，建议人工查看原文后裁决（若为页面超链接则宜改 not_tested）"
+    },
+    {
+      "firmware": "R3",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "correct_to_not_tested",
+      "suggested": "not_tested",
+      "evidence_ids": [
+        "E-R3-0001",
+        "E-R3-0002",
+        "E-R3-0003",
+        "E-R3-0004",
+        "E-R3-0005"
+      ],
+      "raw_refs": [
+        "etc/ethertypes:7",
+        "etc/init.d/p910nd:113",
+        "etc/init.d/p910nd:28",
+        "etc/services:8",
+        "sbin/tr069@0x65c40"
+      ],
+      "reason": "5 条证据全为 etc/ethertypes、/etc/services、init 脚本注释与 TR-069 数据模型中的标准组织/规范文档 URL（iana/lanana/linuxbase/freebsd/broadband-forum），非云平台或厂商服务端外联地址，不满足定义；R3 因此无可用 EGRESS 证据"
+    },
+    {
+      "firmware": "C1",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "correct_to_not_tested",
+      "suggested": "not_tested",
+      "evidence_ids": [
+        "E-C1t-0002"
+      ],
+      "raw_refs": [
+        "etc/protocols:3"
+      ],
+      "reason": "唯一证据为 /etc/protocols 文件头的 www.iana.org 规范引用，属标准组织/文档 URL，非云平台或厂商服务端外联地址（与 C 侧其余固件同一提取噪声），不满足定义"
+    },
+    {
+      "firmware": "C2",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "correct_to_not_tested",
+      "suggested": "not_tested",
+      "evidence_ids": [
+        "E-C2t-0003"
+      ],
+      "raw_refs": [
+        "etc/protocols:3"
+      ],
+      "reason": "唯一证据为 /etc/protocols 文件头的 www.iana.org 规范引用，属标准组织/文档 URL，非云平台或厂商服务端外联地址（与 C 侧其余固件同一提取噪声），不满足定义"
+    },
+    {
+      "firmware": "C3",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "correct_to_not_tested",
+      "suggested": "not_tested",
+      "evidence_ids": [
+        "E-C3t-0003"
+      ],
+      "raw_refs": [
+        "etc/protocols:3"
+      ],
+      "reason": "唯一证据为 /etc/protocols 文件头的 www.iana.org 规范引用，属标准组织/文档 URL，非云平台或厂商服务端外联地址（与 C 侧其余固件同一提取噪声），不满足定义"
+    },
+    {
+      "firmware": "C4",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "correct_to_not_tested",
+      "suggested": "not_tested",
+      "evidence_ids": [
+        "E-C4t-0003"
+      ],
+      "raw_refs": [
+        "etc/protocols:3"
+      ],
+      "reason": "唯一证据为 /etc/protocols 文件头的 www.iana.org 规范引用，属标准组织/文档 URL，非云平台或厂商服务端外联地址（与 C 侧其余固件同一提取噪声），不满足定义"
+    },
+    {
+      "firmware": "C5",
+      "check": "EGRESS_FIXED_CLOUD_ENDPOINT",
+      "prefilled": "found",
+      "verdict": "correct_to_not_tested",
+      "suggested": "not_tested",
+      "evidence_ids": [
+        "E-C5-0002"
+      ],
+      "raw_refs": [
+        "etc/protocols:3"
+      ],
+      "reason": "唯一证据为 /etc/protocols 文件头的 www.iana.org 规范引用，属标准组织/文档 URL，非云平台或厂商服务端外联地址（与 C 侧其余固件同一提取噪声），不满足定义"
+    }
+  ],
+  "notes": "【方法】逐个 check_code 汇总 evidence（A2=运行时+静态），按 detail/raw_ref 与 baseline.yaml 定义做语义比对；found 标准：存在同 check_code 条目且证据事实类型与定义相符（E3 静态同类发现可 found，项目指南 §3.3/§4.4 与分配书例 1 明示 found≠已验证可利用），但标准组织/文档 URL、任意字符串不算；not_tested 标准：无同 check_code 且无实测/抓包记录。反向检查未发现『有证据却填 not_tested』的漏项。 【限制】除 A2 运行时 raw（materials/firmae/dcs_*.txt）可逐份复核（已复核：dcs_result.txt 记录 admin/空口令→200、/home.asp 38,782 字节，admin:admin 与 admin:password 均 401；HNAP1 200+GetDeviceSettingsResponse）外，其余 raw_ref 指向固件解包 rootfs（如 A1 rootfs=/home/rmua/t12/...），仓库无 data/ 与 rootfs，无法逐行复核，只能按 detail+ref 路径语义判断。 【证据缺陷】1) EGRESS 提取器把标准/文档/许可证 URL（iana.org、lanana.org、linuxbase.org、freebsd.org、broadband-forum.org）标为外联地址，造成 R3 全 5 条、C1–C5 各 1 条误报，建议加域名黑名单/标准组织清单过滤；2) A3/A3-19/R1/R2 的 www.baidu.com（WifiPowerGet.txt 连通性测试）非云/厂商端点，属噪声（该格另有 oray/tenda 等有效条目，found 仍成立）；3) C2/C3/C4 的 radio_pass 位于 /etc/init.d/wlan-manager:6，可能是脚本变量/配置引用而非字面口令，无 rootfs 无法复核，证据置信度偏低；4) 大量 UNAUTH_MGMT_ENDPOINT 证据只是接口字符串、鉴权状态未验证（E3 c=0.3），材料措辞不能写成『未授权访问已验证』；5) A2 运行时 raw 仅存响应报文，无请求头/命令记录，『未认证』依赖 dcs_result.txt 汇总声明与 401 缺失推断；6) A2 管理面为 HTTP Basic 明文（443 拒绝），但无外联抓包，EGRESS_PLAINTEXT_CHANNEL 维持 not_tested 正确。 【口径提示】若采纳 6 处纠正，A 侧 found 将从 47 降为 41（not_tested 61→67）；R3 变为 9 项全 not_tested。第三方静态域名（oray/yunos/xunlei）目前挂在 EGRESS_FIXED_CLOUD_ENDPOINT，按 baseline 也可论证归 EGRESS_UNREGISTERED_THIRD_PARTY，但该项 source 是抓包，故未改判，仅提示分类口径需统一。"
+}
