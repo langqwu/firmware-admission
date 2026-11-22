@@ -1,0 +1,429 @@
+{
+  "reviewer": "integrity-verifier",
+  "repo_head": "33660ed",
+  "generated_at": "2026-11-21T15:34:12+08:00",
+  "firmware_counts": {
+    "A1": {
+      "total": 32,
+      "by_check": {
+        "CRED_DEFAULT_ADMIN_WEB": 1,
+        "CRED_DEFAULT_SERVICE_LOGIN": 1,
+        "CRED_HARDCODED_SECRET": 2,
+        "EGRESS_FIXED_CLOUD_ENDPOINT": 4,
+        "UNAUTH_MGMT_ENDPOINT": 24
+      },
+      "by_level": {
+        "E3": 32
+      }
+    },
+    "A2": {
+      "total": 7,
+      "by_check": {
+        "CRED_DEFAULT_ADMIN_WEB": 1,
+        "CRED_HARDCODED_SECRET": 1,
+        "EGRESS_FIXED_CLOUD_ENDPOINT": 1,
+        "UNAUTH_INFO_DISCLOSURE": 1,
+        "UNAUTH_MGMT_ENDPOINT": 3
+      },
+      "by_level": {
+        "E1": 1,
+        "E2": 2,
+        "E3": 4
+      },
+      "note": "运行时 materials/evidence_runtime_dcs.json 3 条 + 静态 materials/evidence_sample_a2.json 4 条"
+    },
+    "A3": {
+      "total": 36,
+      "by_check": {
+        "CRED_DEFAULT_ADMIN_WEB": 1,
+        "CRED_DEFAULT_SERVICE_LOGIN": 8,
+        "CRED_HARDCODED_SECRET": 1,
+        "EGRESS_FIXED_CLOUD_ENDPOINT": 5,
+        "UNAUTH_MGMT_ENDPOINT": 21
+      },
+      "by_level": {
+        "E3": 36
+      }
+    },
+    "A3-19": {
+      "total": 31,
+      "by_check": {
+        "CRED_DEFAULT_ADMIN_WEB": 1,
+        "CRED_DEFAULT_SERVICE_LOGIN": 8,
+        "CRED_HARDCODED_SECRET": 1,
+        "EGRESS_FIXED_CLOUD_ENDPOINT": 5,
+        "UNAUTH_MGMT_ENDPOINT": 16
+      },
+      "by_level": {
+        "E3": 31
+      }
+    },
+    "R1": {
+      "total": 36,
+      "by_check": {
+        "CRED_DEFAULT_ADMIN_WEB": 1,
+        "CRED_DEFAULT_SERVICE_LOGIN": 8,
+        "CRED_HARDCODED_SECRET": 1,
+        "EGRESS_FIXED_CLOUD_ENDPOINT": 5,
+        "UNAUTH_MGMT_ENDPOINT": 21
+      },
+      "by_level": {
+        "E3": 36
+      }
+    },
+    "R2": {
+      "total": 35,
+      "by_check": {
+        "CRED_DEFAULT_ADMIN_WEB": 1,
+        "CRED_DEFAULT_SERVICE_LOGIN": 8,
+        "CRED_HARDCODED_SECRET": 1,
+        "EGRESS_FIXED_CLOUD_ENDPOINT": 5,
+        "UNAUTH_MGMT_ENDPOINT": 20
+      },
+      "by_level": {
+        "E3": 35
+      }
+    },
+    "R3": {
+      "total": 5,
+      "by_check": {
+        "EGRESS_FIXED_CLOUD_ENDPOINT": 5
+      },
+      "by_level": {
+        "E3": 5
+      }
+    },
+    "C1": {
+      "total": 3,
+      "by_check": {
+        "CRED_DEFAULT_SERVICE_LOGIN": 1,
+        "EGRESS_FIXED_CLOUD_ENDPOINT": 1,
+        "UNAUTH_MGMT_ENDPOINT": 1
+      },
+      "by_level": {
+        "E3": 3
+      }
+    },
+    "C2": {
+      "total": 3,
+      "by_check": {
+        "CRED_DEFAULT_SERVICE_LOGIN": 1,
+        "CRED_HARDCODED_SECRET": 1,
+        "EGRESS_FIXED_CLOUD_ENDPOINT": 1
+      },
+      "by_level": {
+        "E3": 3
+      }
+    },
+    "C3": {
+      "total": 3,
+      "by_check": {
+        "CRED_DEFAULT_SERVICE_LOGIN": 1,
+        "CRED_HARDCODED_SECRET": 1,
+        "EGRESS_FIXED_CLOUD_ENDPOINT": 1
+      },
+      "by_level": {
+        "E3": 3
+      }
+    },
+    "C4": {
+      "total": 4,
+      "by_check": {
+        "CRED_DEFAULT_SERVICE_LOGIN": 1,
+        "CRED_HARDCODED_SECRET": 1,
+        "EGRESS_FIXED_CLOUD_ENDPOINT": 1,
+        "UNAUTH_MGMT_ENDPOINT": 1
+      },
+      "by_level": {
+        "E3": 4
+      }
+    },
+    "C5": {
+      "total": 3,
+      "by_check": {
+        "CRED_DEFAULT_SERVICE_LOGIN": 1,
+        "EGRESS_FIXED_CLOUD_ENDPOINT": 1,
+        "UNAUTH_MGMT_ENDPOINT": 1
+      },
+      "by_level": {
+        "E3": 3
+      }
+    }
+  },
+  "id_coverage": {
+    "_id_format_rules": {
+      "A2_runtime": "E-A2-E<level>-NNNN（按 level 独立编号：E1-0001 / E2-0001 / E2-0002）",
+      "A2_static": "E-A2-NNNN",
+      "C1_C4": "E-C<N>t-NNNN，且记录 firmware_id=C<N>t（与审计表的 C1..C4 标签不一致，见 issues）",
+      "C5": "E-C5-NNNN，firmware_id=C5",
+      "other_firmware": "E-<FW>-NNNN（无 level 段）",
+      "uniqueness": "198/198 条 ID 全局唯一，无跨文件重复"
+    },
+    "A1": {
+      "evidence_records": 32,
+      "audit_rows": 9,
+      "evidence_ids": 32,
+      "audit_ids": 32,
+      "missing_in_audit": [],
+      "listed_but_absent_in_evidence": [],
+      "duplicate_audit_ids": [],
+      "record_firmware_id": "A1",
+      "status": "ok"
+    },
+    "A2": {
+      "evidence_records": 7,
+      "audit_rows": 9,
+      "evidence_ids": 7,
+      "audit_ids": 7,
+      "missing_in_audit": [],
+      "listed_but_absent_in_evidence": [],
+      "duplicate_audit_ids": [],
+      "record_firmware_id": "A2",
+      "note": "运行时 3 + 静态 4；审计表按固件合并列 7 个 ID，覆盖正确",
+      "status": "ok"
+    },
+    "A3": {
+      "evidence_records": 36,
+      "audit_rows": 9,
+      "evidence_ids": 36,
+      "audit_ids": 36,
+      "missing_in_audit": [],
+      "listed_but_absent_in_evidence": [],
+      "duplicate_audit_ids": [],
+      "record_firmware_id": "A3",
+      "status": "ok"
+    },
+    "A3-19": {
+      "evidence_records": 31,
+      "audit_rows": 9,
+      "evidence_ids": 31,
+      "audit_ids": 31,
+      "missing_in_audit": [],
+      "listed_but_absent_in_evidence": [],
+      "duplicate_audit_ids": [],
+      "record_firmware_id": "A3-19",
+      "status": "ok"
+    },
+    "R1": {
+      "evidence_records": 36,
+      "audit_rows": 9,
+      "evidence_ids": 36,
+      "audit_ids": 36,
+      "missing_in_audit": [],
+      "listed_but_absent_in_evidence": [],
+      "duplicate_audit_ids": [],
+      "record_firmware_id": "R1",
+      "status": "ok"
+    },
+    "R2": {
+      "evidence_records": 35,
+      "audit_rows": 9,
+      "evidence_ids": 35,
+      "audit_ids": 35,
+      "missing_in_audit": [],
+      "listed_but_absent_in_evidence": [],
+      "duplicate_audit_ids": [],
+      "record_firmware_id": "R2",
+      "status": "ok"
+    },
+    "R3": {
+      "evidence_records": 5,
+      "audit_rows": 9,
+      "evidence_ids": 5,
+      "audit_ids": 5,
+      "missing_in_audit": [],
+      "listed_but_absent_in_evidence": [],
+      "duplicate_audit_ids": [],
+      "record_firmware_id": "R3",
+      "status": "ok"
+    },
+    "C1": {
+      "evidence_records": 3,
+      "audit_rows": 9,
+      "evidence_ids": 3,
+      "audit_ids": 3,
+      "missing_in_audit": [],
+      "listed_but_absent_in_evidence": [],
+      "duplicate_audit_ids": [],
+      "record_firmware_id": "C1t",
+      "status": "ok_naming_deviation",
+      "note": "ID/审计一致，但 firmware_id=C1t 与规范标签 C1 不一致"
+    },
+    "C2": {
+      "evidence_records": 3,
+      "audit_rows": 9,
+      "evidence_ids": 3,
+      "audit_ids": 3,
+      "missing_in_audit": [],
+      "listed_but_absent_in_evidence": [],
+      "duplicate_audit_ids": [],
+      "record_firmware_id": "C2t",
+      "status": "ok_naming_deviation"
+    },
+    "C3": {
+      "evidence_records": 3,
+      "audit_rows": 9,
+      "evidence_ids": 3,
+      "audit_ids": 3,
+      "missing_in_audit": [],
+      "listed_but_absent_in_evidence": [],
+      "duplicate_audit_ids": [],
+      "record_firmware_id": "C3t",
+      "status": "ok_naming_deviation"
+    },
+    "C4": {
+      "evidence_records": 4,
+      "audit_rows": 9,
+      "evidence_ids": 4,
+      "audit_ids": 4,
+      "missing_in_audit": [],
+      "listed_but_absent_in_evidence": [],
+      "duplicate_audit_ids": [],
+      "record_firmware_id": "C4t",
+      "status": "ok_naming_deviation"
+    },
+    "C5": {
+      "evidence_records": 3,
+      "audit_rows": 9,
+      "evidence_ids": 3,
+      "audit_ids": 3,
+      "missing_in_audit": [],
+      "listed_but_absent_in_evidence": [],
+      "duplicate_audit_ids": [],
+      "record_firmware_id": "C5",
+      "status": "ok"
+    }
+  },
+  "issues": [
+    {
+      "severity": "high",
+      "firmware": "R3,C1,C2,C3,C4,C5",
+      "type": "suspected_false_positive_evidence",
+      "detail": "EGRESS_FIXED_CLOUD_ENDPOINT 证据疑似把系统注册表文件头注释里的文档 URL 当成「硬编码 http 外联地址」：R3 全部 5 条来自 etc/ethertypes:7、etc/init.d/p910nd:113、etc/init.d/p910nd:28、etc/services:8、sbin/tr069@0x65c40（www.iana.org / www.lanana.org / www.linuxbase.org / www.freebsd.org / cwmp-data-models.broadband-forum.org）；C1-C5 各 1 条来自 etc/protocols:3（www.iana.org）。/etc/ethertypes、/etc/protocols、/etc/services 属 IANA/LANANA/FreeBSD 注册表文件，这些 URL 通常出现在文件头注释或命名空间，并非设备配置的云外联端点。若属实，R3 唯一的 found 检查（EGRESS_FIXED_CLOUD_ENDPOINT）与 C1-C5 相应 found 行均为误报，审计 found=47 需下调。rootfs 在本机不存在（路径为 /mnt/e/... 与 /home/rmua/...），无法打开原文复核，建议人工核对 raw_ref 所指行后再定性。",
+      "evidence_ids": [
+        "E-R3-0001",
+        "E-R3-0002",
+        "E-R3-0003",
+        "E-R3-0004",
+        "E-R3-0005",
+        "E-C1t-0002",
+        "E-C2t-0003",
+        "E-C3t-0003",
+        "E-C4t-0003",
+        "E-C5-0002"
+      ]
+    },
+    {
+      "severity": "medium",
+      "firmware": "C1,C2,C3,C4",
+      "type": "firmware_id_naming",
+      "detail": "C1-C4 证据文件与记录内 firmware_id 为 C1t/C2t/C3t/C4t，ID 形如 E-C1t-0001；而审计表「固件」列、证据文件名、任务分配与判定分布文档均用 C1-C4，C5 又使用 C5 且 ID 为 E-C5-0001。13 条记录受影响，C 系列内部命名不统一；按 firmware_id 做跨表 join 会与审计/图表对不上。建议统一为 C1-C4（或在映射表中显式登记 C1↔C1t）。",
+      "evidence_ids": [
+        "E-C1t-0001",
+        "E-C1t-0002",
+        "E-C1t-0003",
+        "E-C2t-0001",
+        "E-C2t-0002",
+        "E-C2t-0003",
+        "E-C3t-0001",
+        "E-C3t-0002",
+        "E-C3t-0003",
+        "E-C4t-0001",
+        "E-C4t-0002",
+        "E-C4t-0003",
+        "E-C4t-0004"
+      ]
+    },
+    {
+      "severity": "medium",
+      "firmware": "ALL",
+      "type": "placeholder_in_detail",
+      "detail": "198 条记录中 197 条 detail 以「TODO(measure)」结尾，仅 E-A2-E1-0001 不含。按本次验收口径「detail 不含 TODO/占位符」属系统性不合规；但 configs/judgement.yaml 的 fallback 明确要求「仿真失败一律记 E3 并标 TODO(measure)」，故属有意标注而非疏忽。建议 Lead 裁定：统一去掉 TODO 并改为结构化字段（如 pending_measurement: true），或书面声明该约定并从验收规则中豁免。",
+      "evidence_ids": [
+        "ALL_EXCEPT_E-A2-E1-0001"
+      ]
+    },
+    {
+      "severity": "low",
+      "firmware": "A2",
+      "type": "schema_inconsistency",
+      "detail": "materials/evidence_runtime_dcs.json 顶层为裸 JSON 数组，缺 firmware_id/rootfs/counts 包装；其余 11 个 evidence 文件均为对象。消费方需按 A2 运行时文件特判，建议统一包装或在数据字典中注明。",
+      "evidence_ids": [
+        "E-A2-E1-0001",
+        "E-A2-E2-0001",
+        "E-A2-E2-0002"
+      ]
+    },
+    {
+      "severity": "low",
+      "firmware": "ALL",
+      "type": "confidence_default_deviation",
+      "detail": "configs/baseline.yaml 的 default_confidence 为 E1=0.9、E2=0.7、E3=0.5（meta.provisional=true）。实际：E1 1 条=0.9、E2 2 条=0.7 与默认一致；195 条 E3 中 141 条=0.3、32 条=0.4、仅 22 条=0.5，即 173 条低于默认值。judgement.yaml 未硬性规定 confidence 数值，故不构成规则冲突，仅统计口径偏差。",
+      "evidence_ids": [
+        "ALL_E3_RECORDS"
+      ]
+    },
+    {
+      "severity": "low",
+      "firmware": "A2",
+      "type": "raw_ref_insufficient_context",
+      "detail": "E-A2-E1-0001 的 raw_ref dcs_login_home_headers.txt:1 只有响应状态行/头/HTML，没有请求行与 Authorization，无法自证「HTTP Basic admin/空口令返回 200」；E-A2-E2-0001 的 raw_ref dcs_login_hnap.txt:1 同样没有请求行，无法自证「GET /HNAP1/」与「未认证」。两处请求/鉴权上下文分别由 dcs_login_blank.txt:1/:9/:21、dcs_result.txt:21-22 与 materials/实验记录.md:27 佐证，整体断言仍成立，但单条证据不自洽，建议补引或合并 raw_ref。",
+      "evidence_ids": [
+        "E-A2-E1-0001",
+        "E-A2-E2-0001"
+      ]
+    },
+    {
+      "severity": "low",
+      "firmware": "A2",
+      "type": "detail_value_mapping",
+      "detail": "E-A2-E2-0002 的 detail 写作「型号/固件/硬件/MAC（DCS-960L / A1 / 1.07 / 52:54:00:12:34:56）」，但原文 dcs_login_hnap.txt:9 为 FirmwareVersion=1.07、HardwareVersion=A1，即「固件」「硬件」两个值顺序颠倒。四类值本身都能在原文命中，「泄露」结论不受影响，建议修正 detail 的标签顺序。",
+      "evidence_ids": [
+        "E-A2-E2-0002"
+      ]
+    },
+    {
+      "severity": "low",
+      "firmware": "A3,A3-19,R1,R2",
+      "type": "cross_firmware_duplicate",
+      "detail": "A3 与 A3-19 有 20 组 (check_code, raw_ref, detail) 完全相同的记录（如 E-A3-0001 ↔ E-A3-19-0001，webroot_ro/default.cfg:262）；A3/A3-19/R1/R2 之间另有 10 余组同构记录。同厂同基座（.18/.19、AC15/AC9/AC6）可解释，且各文件 firmware_id 与文件名一致、未见张冠李戴；但同族复用会削弱区分度，建议抽查 2-3 条确认 raw_ref 行在各自 rootfs 中确实存在（本机无 rootfs，无法复核）。",
+      "evidence_ids": [
+        "E-A3-0001",
+        "E-A3-19-0001"
+      ]
+    },
+    {
+      "severity": "low",
+      "firmware": "ALL",
+      "type": "id_format_variance",
+      "detail": "实际 ID 有两种规则：仅 A2 运行时 3 条为 E-A2-E<level>-NNNN；其余 195 条为 E-<FW>-NNNN（无 level 段）。ID 全局唯一且与审计表完全一致，无功能问题；但与验收模板 E-<FW>-E<level>-NNNN 不完全一致，建议在数据字典中登记实际规则（不建议为改格式而重编号）。",
+      "evidence_ids": [
+        "ALL"
+      ]
+    }
+  ],
+  "runtime_check": [
+    {
+      "id": "E-A2-E1-0001",
+      "verdict": "partial",
+      "raw_ref": "materials/firmae/dcs_login_home_headers.txt:1",
+      "quote": "1: HTTP/1.1 200 OK；9: Content-Length: 38782；11-25: 管理页 HTML（引用 dlink.css / cookies.js）；文件内无请求行、无 Authorization",
+      "note": "cited 文件支持断言后半「/home.asp 返回 200 且 38,782 字节」；但「HTTP Basic admin/空口令返回 200」的请求行与凭据不在该文件，需靠 dcs_login_blank.txt:1/:9/:21（HTTP/1.1 200 OK、Content-Length: 516、document.location.href = \"/home.asp\"）、dcs_result.txt:22（default_credential_probe: HTTP Basic admin: -> 200; /home.asp -> 200 (38,782 bytes) [E1]）与 materials/实验记录.md:27 佐证。整体断言成立，单条 raw_ref 仅部分支持。"
+    },
+    {
+      "id": "E-A2-E2-0001",
+      "verdict": "partial",
+      "raw_ref": "materials/firmae/dcs_login_hnap.txt:1",
+      "quote": "1: HTTP/1.1 200 OK；3: Content-Length: 2619；9: <?xml version=\"1.0\"?><soap:Envelope ...><GetDeviceSettingsResponse ...>；文件内无请求行",
+      "note": "cited 文件支持「200 + GetDeviceSettingsResponse」；但「GET /HNAP1/」与「未认证」不在该文件，需 dcs_result.txt:21（web_probe: GET / -> 401 Basic realm=DCS-960L; GET /HNAP1/ -> 200 GetDeviceSettingsResponse）与实验记录.md:27 补证。整体断言成立，单条 raw_ref 部分支持。"
+    },
+    {
+      "id": "E-A2-E2-0002",
+      "verdict": "supported",
+      "raw_ref": "materials/firmae/dcs_login_hnap.txt:1",
+      "quote": "9: <GetDeviceSettingsResponse ...><DeviceName>DCS-960L</DeviceName>...<ModelName>DCS-960L</ModelName><DeviceMacId>52:54:00:12:34:56</DeviceMacId><FirmwareVersion>1.07</FirmwareVersion>...<HardwareVersion>A1</HardwareVersion>",
+      "note": "型号/固件/硬件/MAC 四类值逐字命中：DeviceName 与 ModelName=DCS-960L、FirmwareVersion=1.07、HardwareVersion=A1、DeviceMacId=52:54:00:12:34:56；「未认证」语境见 dcs_result.txt:21。支持断言。注意 detail 把「固件/硬件」与值 A1/1.07 的顺序写反（见 issues）。"
+    }
+  ],
+  "recomputed_audit_summary": "12 固件 × 9 检查项 = 108 行；按 evidence 复算 found=47、not_tested=61、clear=0，与 evidence_audit.md 汇总表及标注任务分配书的「A 侧 47 found / 61 not_tested / 0 clear」一致。逐台 found：A1=5、A2=5、A3=5、A3-19=5、R1=5、R2=5、R3=1、C1=3、C2=3、C3=3、C4=4、C5=3。13 个 evidence 文件共 198 条 ID，与审计表 12 台清单双向完全一致（无漏列、无虚列、无重复）；每行 status 与 check_code 存在性、E1/E2/E3 三列计数、raw_ref 均与 evidence 一致；各文件 counts 字段与实际分类计数一致。注意：以上仅证明覆盖与一致性，不评价证据内容真伪；EGRESS 疑似误报见 issues[0]，若成立 found 计数应下调。"
+}
