@@ -254,16 +254,14 @@
     },
     "A2": {
       "CRED_HARDCODED_SECRET": {
-        "found_on": [
+        "found_on": [],
+        "rejected": [
           {
             "id": "E-A2-0001",
-            "level": "E3",
-            "confidence": 0.5,
             "raw_ref": "etc/rc.d/init.d/pppoe.sh:8",
-            "detail": "静态发现口令字段 pppoepwd（值已脱敏，长度 11）；是否默认/可用待实测 TODO(measure)"
+            "reason": "pppoe.sh:8 为运行时读取 userconfig（PPPoEPWD=`userconfig -read ...`），非硬编码字面量"
           }
-        ],
-        "rejected": []
+        ]
       },
       "EGRESS_FIXED_CLOUD_ENDPOINT": {
         "found_on": [],
@@ -899,16 +897,14 @@
         "rejected": []
       },
       "CRED_HARDCODED_SECRET": {
-        "found_on": [
+        "found_on": [],
+        "rejected": [
           {
             "id": "E-C2t-0002",
-            "level": "E3",
-            "confidence": 0.5,
             "raw_ref": "etc/init.d/wlan-manager:6",
-            "detail": "静态发现口令字段 radio_pass（值已脱敏，长度 7）；是否默认/可用待实测 TODO(measure)"
+            "reason": "RADIO_PASS=\"radio:P;\" 是工厂测试响应标记（P=pass），非口令；长度 7 与 radio:P 吻合"
           }
-        ],
-        "rejected": []
+        ]
       },
       "EGRESS_FIXED_CLOUD_ENDPOINT": {
         "found_on": [],
@@ -935,16 +931,14 @@
         "rejected": []
       },
       "CRED_HARDCODED_SECRET": {
-        "found_on": [
+        "found_on": [],
+        "rejected": [
           {
             "id": "E-C3t-0002",
-            "level": "E3",
-            "confidence": 0.5,
             "raw_ref": "etc/init.d/wlan-manager:6",
-            "detail": "静态发现口令字段 radio_pass（值已脱敏，长度 7）；是否默认/可用待实测 TODO(measure)"
+            "reason": "同 C2：RADIO_PASS=\"radio:P;\" 为工厂测试标记，非口令"
           }
-        ],
-        "rejected": []
+        ]
       },
       "EGRESS_FIXED_CLOUD_ENDPOINT": {
         "found_on": [],
@@ -971,16 +965,14 @@
         "rejected": []
       },
       "CRED_HARDCODED_SECRET": {
-        "found_on": [
+        "found_on": [],
+        "rejected": [
           {
             "id": "E-C4t-0002",
-            "level": "E3",
-            "confidence": 0.5,
             "raw_ref": "etc/init.d/wlan-manager:6",
-            "detail": "静态发现口令字段 radio_pass（值已脱敏，长度 7）；是否默认/可用待实测 TODO(measure)"
+            "reason": "同 C2：RADIO_PASS=\"radio:P;\" 为工厂测试标记，非口令"
           }
-        ],
-        "rejected": []
+        ]
       },
       "EGRESS_FIXED_CLOUD_ENDPOINT": {
         "found_on": [],

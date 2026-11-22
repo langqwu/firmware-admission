@@ -64,6 +64,15 @@ INVALID = {
     "E-R3-0003": "p910nd 脚本里的 LinuxBase 规范注释地址",
     "E-R3-0004": "etc/services 里的 FreeBSD 规范注释地址",
     "E-R3-0005": "TR-069 数据模型命名空间，不是 ACS 地址",
+    # CRED_HARDCODED_SECRET：字段名命中了，但字段的值不是"硬编码口令"。
+    # 这 4 条的 detail 都是同一模板（"静态发现口令字段 X（值已脱敏，长度 N）"）
+    # 且带 TODO(measure)，即证据自身没有验证"这是口令"。
+    # 原文依据：A 侧 PR #1 §4.2（198 条 raw_ref 逐行核对）；本侧可独立交叉的只有长度指纹
+    # （radio:P = 7 字符，与 detail 的"长度 7"吻合）。
+    "E-A2-0001": "pppoe.sh:8 为运行时读取 userconfig（PPPoEPWD=`userconfig -read ...`），非硬编码字面量",
+    "E-C2t-0002": "RADIO_PASS=\"radio:P;\" 是工厂测试响应标记（P=pass），非口令；长度 7 与 radio:P 吻合",
+    "E-C3t-0002": "同 C2：RADIO_PASS=\"radio:P;\" 为工厂测试标记，非口令",
+    "E-C4t-0002": "同 C2：RADIO_PASS=\"radio:P;\" 为工厂测试标记，非口令",
 }
 
 CHECKS = [

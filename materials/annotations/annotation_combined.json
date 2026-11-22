@@ -149,7 +149,7 @@
       "A2": {
         "CRED_DEFAULT_ADMIN_WEB": "found",
         "CRED_DEFAULT_SERVICE_LOGIN": "not_tested",
-        "CRED_HARDCODED_SECRET": "found",
+        "CRED_HARDCODED_SECRET": "not_tested",
         "UNAUTH_MGMT_ENDPOINT": "found",
         "UNAUTH_COMMAND_EXEC": "not_tested",
         "UNAUTH_INFO_DISCLOSURE": "found",
@@ -193,7 +193,7 @@
       "C2": {
         "CRED_DEFAULT_ADMIN_WEB": "not_tested",
         "CRED_DEFAULT_SERVICE_LOGIN": "found",
-        "CRED_HARDCODED_SECRET": "found",
+        "CRED_HARDCODED_SECRET": "not_tested",
         "UNAUTH_MGMT_ENDPOINT": "not_tested",
         "UNAUTH_COMMAND_EXEC": "not_tested",
         "UNAUTH_INFO_DISCLOSURE": "not_tested",
@@ -204,7 +204,7 @@
       "C3": {
         "CRED_DEFAULT_ADMIN_WEB": "not_tested",
         "CRED_DEFAULT_SERVICE_LOGIN": "found",
-        "CRED_HARDCODED_SECRET": "found",
+        "CRED_HARDCODED_SECRET": "not_tested",
         "UNAUTH_MGMT_ENDPOINT": "not_tested",
         "UNAUTH_COMMAND_EXEC": "not_tested",
         "UNAUTH_INFO_DISCLOSURE": "not_tested",
@@ -215,7 +215,7 @@
       "C4": {
         "CRED_DEFAULT_ADMIN_WEB": "not_tested",
         "CRED_DEFAULT_SERVICE_LOGIN": "found",
-        "CRED_HARDCODED_SECRET": "found",
+        "CRED_HARDCODED_SECRET": "not_tested",
         "UNAUTH_MGMT_ENDPOINT": "found",
         "UNAUTH_COMMAND_EXEC": "not_tested",
         "UNAUTH_INFO_DISCLOSURE": "not_tested",
