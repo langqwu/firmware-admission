@@ -1,0 +1,10 @@
+{
+  "coverage": 0.4351851851851852,
+  "agreement": 0.8981481481481481,
+  "kappa": 0.7870967741935484,
+  "decision_accuracy": null,
+  "false_block_rate": null,
+  "miss_rate": null,
+  "asn_fallback_rate": null,
+  "policy_rule_count": 0
+}

@@ -1,0 +1,275 @@
+{
+  "annotators": {
+    "A": {
+      "A1": {
+        "CRED_DEFAULT_ADMIN_WEB": "found",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "found",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "A2": {
+        "CRED_DEFAULT_ADMIN_WEB": "found",
+        "CRED_DEFAULT_SERVICE_LOGIN": "not_tested",
+        "CRED_HARDCODED_SECRET": "found",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "found",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "A3": {
+        "CRED_DEFAULT_ADMIN_WEB": "found",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "found",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "A3-19": {
+        "CRED_DEFAULT_ADMIN_WEB": "found",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "found",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "R1": {
+        "CRED_DEFAULT_ADMIN_WEB": "found",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "found",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "R2": {
+        "CRED_DEFAULT_ADMIN_WEB": "found",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "found",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "R3": {
+        "CRED_DEFAULT_ADMIN_WEB": "not_tested",
+        "CRED_DEFAULT_SERVICE_LOGIN": "not_tested",
+        "CRED_HARDCODED_SECRET": "not_tested",
+        "UNAUTH_MGMT_ENDPOINT": "not_tested",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "C1": {
+        "CRED_DEFAULT_ADMIN_WEB": "not_tested",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "not_tested",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "C2": {
+        "CRED_DEFAULT_ADMIN_WEB": "not_tested",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "found",
+        "UNAUTH_MGMT_ENDPOINT": "not_tested",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "C3": {
+        "CRED_DEFAULT_ADMIN_WEB": "not_tested",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "found",
+        "UNAUTH_MGMT_ENDPOINT": "not_tested",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "C4": {
+        "CRED_DEFAULT_ADMIN_WEB": "not_tested",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "found",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "C5": {
+        "CRED_DEFAULT_ADMIN_WEB": "not_tested",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "not_tested",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      }
+    },
+    "B": {
+      "A1": {
+        "CRED_DEFAULT_ADMIN_WEB": "found",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "found",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "A2": {
+        "CRED_DEFAULT_ADMIN_WEB": "found",
+        "CRED_DEFAULT_SERVICE_LOGIN": "not_tested",
+        "CRED_HARDCODED_SECRET": "not_tested",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "found",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "not_tested",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "A3": {
+        "CRED_DEFAULT_ADMIN_WEB": "found",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "found",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "A3-19": {
+        "CRED_DEFAULT_ADMIN_WEB": "found",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "found",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "C1": {
+        "CRED_DEFAULT_ADMIN_WEB": "not_tested",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "not_tested",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "not_tested",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "C2": {
+        "CRED_DEFAULT_ADMIN_WEB": "not_tested",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "not_tested",
+        "UNAUTH_MGMT_ENDPOINT": "not_tested",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "not_tested",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "C3": {
+        "CRED_DEFAULT_ADMIN_WEB": "not_tested",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "not_tested",
+        "UNAUTH_MGMT_ENDPOINT": "not_tested",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "not_tested",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "C4": {
+        "CRED_DEFAULT_ADMIN_WEB": "not_tested",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "not_tested",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "not_tested",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "C5": {
+        "CRED_DEFAULT_ADMIN_WEB": "not_tested",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "not_tested",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "not_tested",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "R1": {
+        "CRED_DEFAULT_ADMIN_WEB": "found",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "found",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "R2": {
+        "CRED_DEFAULT_ADMIN_WEB": "found",
+        "CRED_DEFAULT_SERVICE_LOGIN": "found",
+        "CRED_HARDCODED_SECRET": "found",
+        "UNAUTH_MGMT_ENDPOINT": "found",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      },
+      "R3": {
+        "CRED_DEFAULT_ADMIN_WEB": "not_tested",
+        "CRED_DEFAULT_SERVICE_LOGIN": "not_tested",
+        "CRED_HARDCODED_SECRET": "not_tested",
+        "UNAUTH_MGMT_ENDPOINT": "not_tested",
+        "UNAUTH_COMMAND_EXEC": "not_tested",
+        "UNAUTH_INFO_DISCLOSURE": "not_tested",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "not_tested",
+        "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
+        "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
+      }
+    }
+  },
+  "decisions": [],
+  "policy_replay": [],
+  "policies": []
+}
