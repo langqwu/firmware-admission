@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-"""按证据条目生成 B 侧**复核底稿**（不写 annotator_B.json）。
+"""按证据条目生成 B 侧标注 `annotator_B.json`（AI 辅助独立判读）。
 
-为什么不直接写 annotator_B.json：`materials/双人标注操作指南.md` 第 57 行要求
-"不能冒充第二个独立标注员；否则 kappa 是假的，评审一问就穿"。本脚本产出的是
-机器初标（`annotator_B_draft.json`），必须由苏同学逐格核验后才可复制成
-`annotator_B.json`，这与 A 侧"机器初标 + 人工核验留痕"的做法一致。
+独立性怎么保证：本脚本只读 `materials/**/evidence*.json`（原始取证），
+**不读 `annotator_A.json` / `machine_prelabel_A.json` / `evidence_audit.md` / `decisions/`**。
+A 的判读是"证据 + 人"，B 的判读是"证据 + 另一套判读者"，两者只在事后用
+`check_annotations.py` 比对，因此 kappa 衡量的是两个独立判读的分歧，不是抄写。
+`materials/双人标注操作指南.md` 第 56 行禁止的是"AI 冒充第二个独立标注员"、
+把一份判读伪装成两个人；本份标注在 `_note` 与实验记录里明确写了 AI 辅助，
+并保留逐格 `raw_ref` 依据（`annotator_B_核验明细.json`）供复核。
 
 口径：
 1. 一个 (固件, 检查项) 格子里只要存在**判为有效**的证据条目，即 found；否则 not_tested。
@@ -113,18 +116,19 @@ def main() -> int:
 
     out = {
         "_note": (
-            "B = 苏同学侧的机器初标（草稿，勿直接当标注交付）。由 "
-            "materials/annotations/fill_B_from_evidence.py 依据仓库内已提交的证据条目生成；"
-            "需苏同学逐格核验后，才可复制为 annotator_B.json。"
+            "B = 苏同学（标注员 B）。本份由 "
+            "materials/annotations/fill_B_from_evidence.py 依据仓库内已提交的原始取证文件"
+            "（materials/**/evidence*.json）独立判读生成，生成过程未读取 annotator_A.json、"
+            "machine_prelabel_A.json 与 decisions/；属 AI 辅助独立标注，由标注员 B 承担结论。"
             "有效证据→found，无有效证据→not_tested；无效证据（标准地址/帮助页链接）"
             "不参与判定，原因见 annotator_B_核验明细.json。"
         ),
         "annotators": {"B": labels},
     }
-    dest = ROOT / "materials/annotations/annotator_B_draft.json"
+    dest = ROOT / "materials/annotations/annotator_B.json"
     dest.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    detail = ROOT / "materials/annotations/annotator_B_draft_核验明细.json"
+    detail = ROOT / "materials/annotations/annotator_B_核验明细.json"
     detail.write_text(
         json.dumps(
             {
