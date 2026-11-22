@@ -1,15 +1,15 @@
 {
-  "firmware_id": "C1t",
-  "rootfs": "/mnt/e/dsh_talking/firmware-admission/data/firmware/_Tapo_C100v1_en_1.3.6_Build_230512_Rel.47642n_up_boot-signed_1689123454635.extracted/_Tapo_C100v1_en_1.3.6_Build_230512_Rel.47642n_up_boot-signed_1689123454635.bin.extracted/squashfs-root",
+  "firmware_id": "C1",
+  "rootfs": "/home/rmua/t12/regen_evidence/C1/_Tapo_C100v1_en_1.3.6_Build_230512_Rel.47642n_up_boot-signed_1689123454635.extracted/_Tapo_C100v1_en_1.3.6_Build_230512_Rel.47642n_up_boot-signed_1689123454635.bin.extracted/squashfs-root",
   "counts": {
     "CRED": 1,
     "UNAUTH": 1,
-    "EGRESS": 1
+    "EGRESS": 0
   },
   "evidence": [
     {
-      "id": "E-C1t-0001",
-      "firmware_id": "C1t",
+      "id": "E-C1-0001",
+      "firmware_id": "C1",
       "check_code": "CRED_DEFAULT_SERVICE_LOGIN",
       "level": "E3",
       "confidence": 0.3,
@@ -17,17 +17,8 @@
       "detail": "静态发现可登录账号 root（uid=0, shell=/bin/ash）；是否为默认口令待影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-C1t-0002",
-      "firmware_id": "C1t",
-      "check_code": "EGRESS_FIXED_CLOUD_ENDPOINT",
-      "level": "E3",
-      "confidence": 0.4,
-      "raw_ref": "etc/protocols:3",
-      "detail": "静态发现硬编码 http 外联地址 host=www.iana.org；域名归属与外联行为未验证 TODO(measure)"
-    },
-    {
-      "id": "E-C1t-0003",
-      "firmware_id": "C1t",
+      "id": "E-C1-0002",
+      "firmware_id": "C1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
       "confidence": 0.3,

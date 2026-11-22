@@ -4,7 +4,7 @@
   "counts": {
     "CRED": 10,
     "UNAUTH": 21,
-    "EGRESS": 5
+    "EGRESS": 3
   },
   "evidence": [
     {
@@ -127,24 +127,6 @@
     {
       "id": "E-A3-0014",
       "firmware_id": "A3",
-      "check_code": "EGRESS_FIXED_CLOUD_ENDPOINT",
-      "level": "E3",
-      "confidence": 0.4,
-      "raw_ref": "webroot_ro/index.html:399",
-      "detail": "静态发现硬编码 http 外联地址 host=wifi.yunos.com；域名归属与外联行为未验证 TODO(measure)"
-    },
-    {
-      "id": "E-A3-0015",
-      "firmware_id": "A3",
-      "check_code": "EGRESS_FIXED_CLOUD_ENDPOINT",
-      "level": "E3",
-      "confidence": 0.4,
-      "raw_ref": "webroot_ro/xunleiDownload.html:40",
-      "detail": "静态发现硬编码 http 外联地址 host=yuancheng.xunlei.com；域名归属与外联行为未验证 TODO(measure)"
-    },
-    {
-      "id": "E-A3-0016",
-      "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
       "confidence": 0.3,
@@ -152,7 +134,7 @@
       "detail": "静态发现接口 /cgi-bin/DownloadCfg；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0017",
+      "id": "E-A3-0015",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -161,7 +143,7 @@
       "detail": "静态发现接口 /cgi-bin/DownloadFlash；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0018",
+      "id": "E-A3-0016",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -170,7 +152,7 @@
       "detail": "静态发现接口 /cgi-bin/DownloadSyslog；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0019",
+      "id": "E-A3-0017",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -179,7 +161,7 @@
       "detail": "静态发现接口 /cgi-bin/DownloadLog；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0020",
+      "id": "E-A3-0018",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -188,7 +170,7 @@
       "detail": "静态发现接口 /goform/telnet；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0021",
+      "id": "E-A3-0019",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -197,7 +179,7 @@
       "detail": "静态发现接口 /goform/fast_setting；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0022",
+      "id": "E-A3-0020",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -206,7 +188,7 @@
       "detail": "静态发现接口 /goform/ate；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0023",
+      "id": "E-A3-0021",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -215,7 +197,7 @@
       "detail": "静态发现接口 /goform/InsertWhite；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0024",
+      "id": "E-A3-0022",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -224,7 +206,7 @@
       "detail": "静态发现接口 /goform/getWanConnectStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0025",
+      "id": "E-A3-0023",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -233,7 +215,7 @@
       "detail": "静态发现接口 /goform/getProduct；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0026",
+      "id": "E-A3-0024",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -242,7 +224,7 @@
       "detail": "静态发现接口 /goform/getRebootStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0027",
+      "id": "E-A3-0025",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -251,7 +233,7 @@
       "detail": "静态发现接口 /goform/GetRouterStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0028",
+      "id": "E-A3-0026",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -260,7 +242,7 @@
       "detail": "静态发现接口 /goform/getWanParameters；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0029",
+      "id": "E-A3-0027",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -269,7 +251,7 @@
       "detail": "静态发现接口 /goform/GetUSBStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0030",
+      "id": "E-A3-0028",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -278,7 +260,7 @@
       "detail": "静态发现接口 /goform/WifiApScan；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0031",
+      "id": "E-A3-0029",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -287,7 +269,7 @@
       "detail": "静态发现接口 /cgi-bin/luci；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0032",
+      "id": "E-A3-0030",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -296,7 +278,7 @@
       "detail": "静态发现接口 /cgi-bin/upgrade；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0033",
+      "id": "E-A3-0031",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -305,7 +287,7 @@
       "detail": "静态发现接口 /goform/refreshDLNA；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0034",
+      "id": "E-A3-0032",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -314,7 +296,7 @@
       "detail": "静态发现接口 /cgi-bin/UploadCfg；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0035",
+      "id": "E-A3-0033",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -323,7 +305,7 @@
       "detail": "静态发现接口 /goform/SysToolChangePwd；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A3-0036",
+      "id": "E-A3-0034",
       "firmware_id": "A3",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",

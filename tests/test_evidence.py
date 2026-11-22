@@ -108,6 +108,63 @@ def test_rule_database_is_not_reported_as_egress(tmp_path: Path) -> None:
     assert [item for item in evidence if item.check_code == "EGRESS_FIXED_CLOUD_ENDPOINT"] == []
 
 
+def test_standard_documentation_urls_and_help_links_are_not_egress(
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "rootfs"
+    _write(
+        root / "etc/protocols",
+        "# http://www.iana.org/assignments/protocol-numbers\n",
+    )
+    _write(
+        root / "etc/services",
+        "# http://www.freebsd.org/cgi/cvsweb.cgi/services\n",
+    )
+    _write(
+        root / "etc/ethertypes",
+        "# http://www.iana.org/assignments/ethertypes\n",
+    )
+    _write(
+        root / "etc/init.d/p910nd",
+        "# http://www.lanana.org/docs/device-list/\n"
+        "# http://www.linuxbase.org/navigator/\n",
+    )
+    (root / "sbin").mkdir(parents=True, exist_ok=True)
+    (root / "sbin/tr069").write_bytes(
+        b"\x7fELF" + b"\x00" * 16
+        + b"http://www.broadband-forum.org/cwmp/tr-069.xml\x00"
+    )
+    _write(
+        root / "web/cgi-bin/home.asp",
+        '<a href="https://www.dlink.com/support">support</a>\n',
+    )
+    _write(
+        root / "etc/rc.d/init.d/pppoe.sh",
+        "PPPoEPWD=`userconfig -read NETWORK_V4 PPPoEPWD`\n",
+    )
+    _write(
+        root / "etc/init.d/wlan-manager",
+        'RADIO_PASS="radio:P;"\n',
+    )
+    _write(
+        root / "webroot/config.cfg",
+        'url="https://cloud.vendor.example/api"\nsecret=abc123\n',
+    )
+
+    evidence = collect_evidence(root, "FW-NOISE")
+
+    egress = [item for item in evidence if item.check_code == "EGRESS_FIXED_CLOUD_ENDPOINT"]
+    assert [item.detail for item in egress] == [
+        "静态发现硬编码 https 外联地址 host=cloud.vendor.example；"
+        "域名归属与外联行为未验证 TODO(measure)"
+    ]
+    creds = [item for item in evidence if item.check_code == "CRED_HARDCODED_SECRET"]
+    assert any("secret" in item.detail for item in creds)
+    assert not any("PPPoEPWD" in item.detail or "RADIO_PASS" in item.detail for item in creds)
+    assert any(item.raw_ref == "webroot/config.cfg:1" for item in evidence)
+    assert any("cloud.vendor.example" in item.detail for item in evidence)
+
+
 def test_main_writes_json_and_reports_usage_errors(
     tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:

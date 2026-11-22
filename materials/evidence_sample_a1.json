@@ -2,7 +2,7 @@
   "firmware_id": "A1",
   "rootfs": "/home/rmua/t12/a1/_extracted/_US_O4V3.0_si_V1.0.0.19(6074)_EN_TDE01_HighPower.bin.extracted/squashfs-root",
   "counts": {
-    "CRED": 4,
+    "CRED": 3,
     "UNAUTH": 24,
     "EGRESS": 4
   },
@@ -30,21 +30,12 @@
       "firmware_id": "A1",
       "check_code": "CRED_HARDCODED_SECRET",
       "level": "E3",
-      "confidence": 0.5,
-      "raw_ref": "etc_ro/prod-script:363",
-      "detail": "静态发现口令字段 old_password（值已脱敏，长度 4）；是否默认/可用待实测 TODO(measure)"
-    },
-    {
-      "id": "E-A1-0004",
-      "firmware_id": "A1",
-      "check_code": "CRED_HARDCODED_SECRET",
-      "level": "E3",
       "confidence": 0.4,
       "raw_ref": "etc_ro/shadow:1",
       "detail": "静态发现 root 口令哈希（算法 MD5-crypt）；弱口令/默认口令待实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0005",
+      "id": "E-A1-0004",
       "firmware_id": "A1",
       "check_code": "EGRESS_FIXED_CLOUD_ENDPOINT",
       "level": "E3",
@@ -53,7 +44,7 @@
       "detail": "静态发现二进制内 https 外联地址 host=cloudfi.tendacn.com；域名归属与外联行为未验证 TODO(measure)"
     },
     {
-      "id": "E-A1-0006",
+      "id": "E-A1-0005",
       "firmware_id": "A1",
       "check_code": "EGRESS_FIXED_CLOUD_ENDPOINT",
       "level": "E3",
@@ -62,7 +53,7 @@
       "detail": "静态发现二进制内 https 外联地址 host=ims.ip-com.com.cn；域名归属与外联行为未验证 TODO(measure)"
     },
     {
-      "id": "E-A1-0007",
+      "id": "E-A1-0006",
       "firmware_id": "A1",
       "check_code": "EGRESS_FIXED_CLOUD_ENDPOINT",
       "level": "E3",
@@ -71,7 +62,7 @@
       "detail": "静态发现二进制内 https 外联地址 host=imsen.ip-com.com.cn；域名归属与外联行为未验证 TODO(measure)"
     },
     {
-      "id": "E-A1-0008",
+      "id": "E-A1-0007",
       "firmware_id": "A1",
       "check_code": "EGRESS_FIXED_CLOUD_ENDPOINT",
       "level": "E3",
@@ -80,7 +71,7 @@
       "detail": "静态发现硬编码 https 外联地址 host=cloudfi.tenda.com.cn；域名归属与外联行为未验证 TODO(measure)"
     },
     {
-      "id": "E-A1-0009",
+      "id": "E-A1-0008",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -89,7 +80,7 @@
       "detail": "静态发现接口 /cgi-bin/upgrade；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0010",
+      "id": "E-A1-0009",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -98,7 +89,7 @@
       "detail": "静态发现接口 /goform/ate；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0011",
+      "id": "E-A1-0010",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -107,7 +98,7 @@
       "detail": "静态发现接口 /goform/ate_rf；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0012",
+      "id": "E-A1-0011",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -116,7 +107,7 @@
       "detail": "静态发现接口 /goform/usbTest；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0013",
+      "id": "E-A1-0012",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -125,7 +116,7 @@
       "detail": "静态发现接口 /goform/getAdStatistics；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0014",
+      "id": "E-A1-0013",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -134,7 +125,7 @@
       "detail": "静态发现接口 /goform/telnet；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0015",
+      "id": "E-A1-0014",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -143,7 +134,7 @@
       "detail": "静态发现接口 /goform/consoleOpen；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0016",
+      "id": "E-A1-0015",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -152,7 +143,7 @@
       "detail": "静态发现接口 /goform/consoleClose；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0017",
+      "id": "E-A1-0016",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -161,7 +152,7 @@
       "detail": "静态发现接口 /goform/getLoginInfo；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0018",
+      "id": "E-A1-0017",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -170,7 +161,7 @@
       "detail": "静态发现接口 /goform/initAdminUser；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0019",
+      "id": "E-A1-0018",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -179,7 +170,7 @@
       "detail": "静态发现接口 /goform/getPreTimeoutNotify；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0020",
+      "id": "E-A1-0019",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -188,7 +179,7 @@
       "detail": "静态发现接口 /goform/getTimeoutNotify；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0021",
+      "id": "E-A1-0020",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -197,7 +188,7 @@
       "detail": "静态发现接口 /goform/ackPreTimeoutNotify；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0022",
+      "id": "E-A1-0021",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -206,7 +197,7 @@
       "detail": "静态发现接口 /goform/getQuickset；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0023",
+      "id": "E-A1-0022",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -215,7 +206,7 @@
       "detail": "静态发现接口 /goform/getSysLogin；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0024",
+      "id": "E-A1-0023",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -224,7 +215,7 @@
       "detail": "静态发现接口 /goform/setQuickset；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0025",
+      "id": "E-A1-0024",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -233,7 +224,7 @@
       "detail": "静态发现接口 /goform/get；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0026",
+      "id": "E-A1-0025",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -242,7 +233,7 @@
       "detail": "静态发现接口 /goform/getStaticsInfo；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0027",
+      "id": "E-A1-0026",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -251,7 +242,7 @@
       "detail": "静态发现接口 /goform/clearSyslog；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0028",
+      "id": "E-A1-0027",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -260,7 +251,7 @@
       "detail": "静态发现接口 /goform/test；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0029",
+      "id": "E-A1-0028",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -269,7 +260,7 @@
       "detail": "静态发现接口 /cgi-bin/DownloadCfg；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0030",
+      "id": "E-A1-0029",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -278,7 +269,7 @@
       "detail": "静态发现接口 /goform/getSysStatusInfo；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0031",
+      "id": "E-A1-0030",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -287,7 +278,7 @@
       "detail": "静态发现接口 /goform/setWrlAdvanceInfo；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A1-0032",
+      "id": "E-A1-0031",
       "firmware_id": "A1",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",

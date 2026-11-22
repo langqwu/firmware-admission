@@ -1,5 +1,5 @@
 {
-  "_note": "A = 标注员 A。机器初标（evidence-derived）：有对应 check_code 证据的填 found，其余 not_tested；没有 clear，因为目前没有逐项 runtime test 记录。A 已于 2026-11-21 逐条核验 108 格 raw_ref（12 台固件下载+binwalk 解包+198 条证据原文核对），标签 0 处需改、TODO=0；27 条证据质量问题见 materials/annotations/annotator_A_核验记录.md 第 4 节。B 必须独立标注。",
+  "_note": "A = 王同学。2026-11-22 证据规则修正后，按新版 evidence 重新预填 108 格：39 found / 69 not_tested / 0 clear；A 的 PR #1 人工核验记录针对旧版 evidence，需按新版重新核验后才能算人工确认；B 必须独立。",
   "annotators": {
     "A": {
       "A1": {
@@ -16,11 +16,11 @@
       "A2": {
         "CRED_DEFAULT_ADMIN_WEB": "found",
         "CRED_DEFAULT_SERVICE_LOGIN": "not_tested",
-        "CRED_HARDCODED_SECRET": "found",
+        "CRED_HARDCODED_SECRET": "not_tested",
         "UNAUTH_MGMT_ENDPOINT": "found",
         "UNAUTH_COMMAND_EXEC": "not_tested",
         "UNAUTH_INFO_DISCLOSURE": "found",
-        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "not_tested",
         "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
         "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
       },
@@ -75,7 +75,7 @@
         "UNAUTH_MGMT_ENDPOINT": "not_tested",
         "UNAUTH_COMMAND_EXEC": "not_tested",
         "UNAUTH_INFO_DISCLOSURE": "not_tested",
-        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "not_tested",
         "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
         "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
       },
@@ -86,7 +86,7 @@
         "UNAUTH_MGMT_ENDPOINT": "found",
         "UNAUTH_COMMAND_EXEC": "not_tested",
         "UNAUTH_INFO_DISCLOSURE": "not_tested",
-        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "not_tested",
         "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
         "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
       },
@@ -97,7 +97,7 @@
         "UNAUTH_MGMT_ENDPOINT": "not_tested",
         "UNAUTH_COMMAND_EXEC": "not_tested",
         "UNAUTH_INFO_DISCLOSURE": "not_tested",
-        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "not_tested",
         "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
         "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
       },
@@ -108,7 +108,7 @@
         "UNAUTH_MGMT_ENDPOINT": "not_tested",
         "UNAUTH_COMMAND_EXEC": "not_tested",
         "UNAUTH_INFO_DISCLOSURE": "not_tested",
-        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "not_tested",
         "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
         "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
       },
@@ -119,7 +119,7 @@
         "UNAUTH_MGMT_ENDPOINT": "found",
         "UNAUTH_COMMAND_EXEC": "not_tested",
         "UNAUTH_INFO_DISCLOSURE": "not_tested",
-        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "not_tested",
         "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
         "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
       },
@@ -130,7 +130,7 @@
         "UNAUTH_MGMT_ENDPOINT": "found",
         "UNAUTH_COMMAND_EXEC": "not_tested",
         "UNAUTH_INFO_DISCLOSURE": "not_tested",
-        "EGRESS_FIXED_CLOUD_ENDPOINT": "found",
+        "EGRESS_FIXED_CLOUD_ENDPOINT": "not_tested",
         "EGRESS_PLAINTEXT_CHANNEL": "not_tested",
         "EGRESS_UNREGISTERED_THIRD_PARTY": "not_tested"
       }

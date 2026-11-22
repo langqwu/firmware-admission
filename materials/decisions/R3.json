@@ -1,12 +1,11 @@
 {
   "firmware_id": "R3",
   "verdict": "conditional",
-  "confidence": 0.033802816901408454,
-  "exposure": 0.9492957746478874,
-  "assurance": 0.033802816901408454,
+  "confidence": 0.0,
+  "exposure": 1.0,
+  "assurance": 0.0,
   "reasons": [
-    "证据不足：加权保障度 assurance=0.034 < 0.60，未测项或弱证据占比较高，不能直接放行",
-    "风险项 1 个：EGRESS_FIXED_CLOUD_ENDPOINT(E3,c=0.40)"
+    "证据不足：加权保障度 assurance=0.000 < 0.60，未测项或弱证据占比较高，不能直接放行"
   ],
   "per_check": {
     "CRED_DEFAULT_ADMIN_WEB": {
@@ -64,13 +63,13 @@
       "confidence": null
     },
     "EGRESS_FIXED_CLOUD_ENDPOINT": {
-      "status": "found",
+      "status": "not_tested",
       "severity": "Medium",
       "weight": 0.6,
-      "risk": 0.24,
-      "assurance": 0.4,
-      "level": "E3",
-      "confidence": 0.4
+      "risk": 0.6,
+      "assurance": 0.0,
+      "level": null,
+      "confidence": null
     },
     "EGRESS_PLAINTEXT_CHANNEL": {
       "status": "not_tested",

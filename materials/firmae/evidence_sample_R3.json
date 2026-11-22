@@ -1,56 +1,10 @@
 {
   "firmware_id": "R3",
-  "rootfs": "/mnt/e/dsh_talking/firmware-admission/data/firmware/_2021.07.21-16.18_DIR_825E_RT8197F_3.0.3_release.extracted/_2021.07.21-16.18_DIR_825E_RT8197F_3.0.3_release.bin.extracted/squashfs-root",
+  "rootfs": "/home/rmua/t12/regen_evidence/R3/_2021.07.21-16.18_DIR_825E_RT8197F_3.0.3_release.extracted/_2021.07.21-16.18_DIR_825E_RT8197F_3.0.3_release.bin.extracted/squashfs-root",
   "counts": {
     "CRED": 0,
     "UNAUTH": 0,
-    "EGRESS": 5
+    "EGRESS": 0
   },
-  "evidence": [
-    {
-      "id": "E-R3-0001",
-      "firmware_id": "R3",
-      "check_code": "EGRESS_FIXED_CLOUD_ENDPOINT",
-      "level": "E3",
-      "confidence": 0.4,
-      "raw_ref": "etc/ethertypes:7",
-      "detail": "静态发现硬编码 http 外联地址 host=www.iana.org；域名归属与外联行为未验证 TODO(measure)"
-    },
-    {
-      "id": "E-R3-0002",
-      "firmware_id": "R3",
-      "check_code": "EGRESS_FIXED_CLOUD_ENDPOINT",
-      "level": "E3",
-      "confidence": 0.4,
-      "raw_ref": "etc/init.d/p910nd:113",
-      "detail": "静态发现硬编码 http 外联地址 host=www.lanana.org；域名归属与外联行为未验证 TODO(measure)"
-    },
-    {
-      "id": "E-R3-0003",
-      "firmware_id": "R3",
-      "check_code": "EGRESS_FIXED_CLOUD_ENDPOINT",
-      "level": "E3",
-      "confidence": 0.4,
-      "raw_ref": "etc/init.d/p910nd:28",
-      "detail": "静态发现硬编码 http 外联地址 host=www.linuxbase.org；域名归属与外联行为未验证 TODO(measure)"
-    },
-    {
-      "id": "E-R3-0004",
-      "firmware_id": "R3",
-      "check_code": "EGRESS_FIXED_CLOUD_ENDPOINT",
-      "level": "E3",
-      "confidence": 0.4,
-      "raw_ref": "etc/services:8",
-      "detail": "静态发现硬编码 http 外联地址 host=www.freebsd.org；域名归属与外联行为未验证 TODO(measure)"
-    },
-    {
-      "id": "E-R3-0005",
-      "firmware_id": "R3",
-      "check_code": "EGRESS_FIXED_CLOUD_ENDPOINT",
-      "level": "E3",
-      "confidence": 0.3,
-      "raw_ref": "sbin/tr069@0x65c40",
-      "detail": "静态发现二进制内 https 外联地址 host=cwmp-data-models.broadband-forum.org；域名归属与外联行为未验证 TODO(measure)"
-    }
-  ]
+  "evidence": []
 }

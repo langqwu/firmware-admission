@@ -2,14 +2,14 @@
   "firmware_id": "A1",
   "verdict": "conditional",
   "confidence": 0.5,
-  "exposure": 0.6253521126760564,
-  "assurance": 0.24507042253521133,
+  "exposure": 0.6140845070422536,
+  "assurance": 0.2338028169014085,
   "reasons": [
     "下限：CRED_DEFAULT_ADMIN_WEB（Critical）为 E3 风险，至少条件放行",
     "下限：CRED_DEFAULT_SERVICE_LOGIN（Critical）为 E3 风险，至少条件放行",
     "下限：UNAUTH_MGMT_ENDPOINT（Critical）为 E3 风险，至少条件放行",
-    "证据不足：加权保障度 assurance=0.245 < 0.60，未测项或弱证据占比较高，不能直接放行",
-    "风险项 5 个：CRED_DEFAULT_ADMIN_WEB(E3,c=0.50)；CRED_DEFAULT_SERVICE_LOGIN(E3,c=0.30)；CRED_HARDCODED_SECRET(E3,c=0.50)；UNAUTH_MGMT_ENDPOINT(E3,c=0.30)；EGRESS_FIXED_CLOUD_ENDPOINT(E3,c=0.40)"
+    "证据不足：加权保障度 assurance=0.234 < 0.60，未测项或弱证据占比较高，不能直接放行",
+    "风险项 5 个：CRED_DEFAULT_ADMIN_WEB(E3,c=0.50)；CRED_DEFAULT_SERVICE_LOGIN(E3,c=0.30)；CRED_HARDCODED_SECRET(E3,c=0.40)；UNAUTH_MGMT_ENDPOINT(E3,c=0.30)；EGRESS_FIXED_CLOUD_ENDPOINT(E3,c=0.40)"
   ],
   "per_check": {
     "CRED_DEFAULT_ADMIN_WEB": {
@@ -34,10 +34,10 @@
       "status": "found",
       "severity": "High",
       "weight": 0.8,
-      "risk": 0.4,
-      "assurance": 0.5,
+      "risk": 0.32000000000000006,
+      "assurance": 0.4,
       "level": "E3",
-      "confidence": 0.5
+      "confidence": 0.4
     },
     "UNAUTH_MGMT_ENDPOINT": {
       "status": "found",

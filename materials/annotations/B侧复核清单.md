@@ -1,6 +1,7 @@
 # B 侧标注说明与逐格依据（苏同学）
 
 > 生成：2026-11-22（v2，补 4 格 CRED_HARDCODED_SECRET）｜生成方式：`materials/annotations/fill_B_from_evidence.py`（可重跑）
+> **历史状态（2026-11-22 证据规则修正后）**：新版 B 为 39 found / 69 not_tested、0 无效 ID；本文件保留旧 36/72 与 11 格分歧记录，供追溯。
 > 状态：**`annotator_B.json` 已填满 108 格**（found 36 / not_tested 72 / clear 0，无 TODO）
 > 交付物：`annotator_B.json`、`annotator_B_核验明细.json`（逐格 raw_ref）、`arbitration.md`（11 格分歧）
 

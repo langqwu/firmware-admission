@@ -31,13 +31,6 @@
           {
             "id": "E-A1-0003",
             "level": "E3",
-            "confidence": 0.5,
-            "raw_ref": "etc_ro/prod-script:363",
-            "detail": "静态发现口令字段 old_password（值已脱敏，长度 4）；是否默认/可用待实测 TODO(measure)"
-          },
-          {
-            "id": "E-A1-0004",
-            "level": "E3",
             "confidence": 0.4,
             "raw_ref": "etc_ro/shadow:1",
             "detail": "静态发现 root 口令哈希（算法 MD5-crypt）；弱口令/默认口令待实测 TODO(measure)"
@@ -48,28 +41,28 @@
       "EGRESS_FIXED_CLOUD_ENDPOINT": {
         "found_on": [
           {
-            "id": "E-A1-0005",
+            "id": "E-A1-0004",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x751f8",
             "detail": "静态发现二进制内 https 外联地址 host=cloudfi.tendacn.com；域名归属与外联行为未验证 TODO(measure)"
           },
           {
-            "id": "E-A1-0006",
+            "id": "E-A1-0005",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75218",
             "detail": "静态发现二进制内 https 外联地址 host=ims.ip-com.com.cn；域名归属与外联行为未验证 TODO(measure)"
           },
           {
-            "id": "E-A1-0007",
+            "id": "E-A1-0006",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75238",
             "detail": "静态发现二进制内 https 外联地址 host=imsen.ip-com.com.cn；域名归属与外联行为未验证 TODO(measure)"
           },
           {
-            "id": "E-A1-0008",
+            "id": "E-A1-0007",
             "level": "E3",
             "confidence": 0.4,
             "raw_ref": "webroot_ro/goform/getCloud/index.html:6",
@@ -81,168 +74,168 @@
       "UNAUTH_MGMT_ENDPOINT": {
         "found_on": [
           {
-            "id": "E-A1-0009",
+            "id": "E-A1-0008",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x6e27c",
             "detail": "静态发现接口 /cgi-bin/upgrade；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0010",
+            "id": "E-A1-0009",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75be8",
             "detail": "静态发现接口 /goform/ate；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0011",
+            "id": "E-A1-0010",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75bf4",
             "detail": "静态发现接口 /goform/ate_rf；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0012",
+            "id": "E-A1-0011",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75c10",
             "detail": "静态发现接口 /goform/usbTest；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0013",
+            "id": "E-A1-0012",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75c20",
             "detail": "静态发现接口 /goform/getAdStatistics；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0014",
+            "id": "E-A1-0013",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75c48",
             "detail": "静态发现接口 /goform/telnet；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0015",
+            "id": "E-A1-0014",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75c58",
             "detail": "静态发现接口 /goform/consoleOpen；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0016",
+            "id": "E-A1-0015",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75c6c",
             "detail": "静态发现接口 /goform/consoleClose；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0017",
+            "id": "E-A1-0016",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75c84",
             "detail": "静态发现接口 /goform/getLoginInfo；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0018",
+            "id": "E-A1-0017",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75c9c",
             "detail": "静态发现接口 /goform/initAdminUser；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0019",
+            "id": "E-A1-0018",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75cd4",
             "detail": "静态发现接口 /goform/getPreTimeoutNotify；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0020",
+            "id": "E-A1-0019",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75cf0",
             "detail": "静态发现接口 /goform/getTimeoutNotify；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0021",
+            "id": "E-A1-0020",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75d0c",
             "detail": "静态发现接口 /goform/ackPreTimeoutNotify；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0022",
+            "id": "E-A1-0021",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75d28",
             "detail": "静态发现接口 /goform/getQuickset；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0023",
+            "id": "E-A1-0022",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75d3c",
             "detail": "静态发现接口 /goform/getSysLogin；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0024",
+            "id": "E-A1-0023",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75d50",
             "detail": "静态发现接口 /goform/setQuickset；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0025",
+            "id": "E-A1-0024",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0x75d98",
             "detail": "静态发现接口 /goform/get；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0026",
+            "id": "E-A1-0025",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/app.js:338",
             "detail": "静态发现接口 /goform/getStaticsInfo；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0027",
+            "id": "E-A1-0026",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/goform/clearSyslog/index.html:2",
             "detail": "静态发现接口 /goform/clearSyslog；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0028",
+            "id": "E-A1-0027",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/goform/test/index.html:2",
             "detail": "静态发现接口 /goform/test；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0029",
+            "id": "E-A1-0028",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/js/system_config.js:177",
             "detail": "静态发现接口 /cgi-bin/DownloadCfg；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0030",
+            "id": "E-A1-0029",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/js/system_status.js:31",
             "detail": "静态发现接口 /goform/getSysStatusInfo；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0031",
+            "id": "E-A1-0030",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/js/wrl_advance.js:138",
             "detail": "静态发现接口 /goform/setWrlAdvanceInfo；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A1-0032",
+            "id": "E-A1-0031",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/js/wrl_basic.js:896",
@@ -253,37 +246,17 @@
       }
     },
     "A2": {
-      "CRED_HARDCODED_SECRET": {
-        "found_on": [],
-        "rejected": [
-          {
-            "id": "E-A2-0001",
-            "raw_ref": "etc/rc.d/init.d/pppoe.sh:8",
-            "reason": "pppoe.sh:8 为运行时读取 userconfig（PPPoEPWD=`userconfig -read ...`），非硬编码字面量"
-          }
-        ]
-      },
-      "EGRESS_FIXED_CLOUD_ENDPOINT": {
-        "found_on": [],
-        "rejected": [
-          {
-            "id": "E-A2-0002",
-            "raw_ref": "web/cgi-bin/home.asp:619",
-            "reason": "web/cgi-bin/home.asp 里的厂商帮助链接，不是设备外联端点"
-          }
-        ]
-      },
       "UNAUTH_MGMT_ENDPOINT": {
         "found_on": [
           {
-            "id": "E-A2-0003",
+            "id": "E-A2-0001",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "etc/httpd.ini:2",
             "detail": "静态发现接口 /hnap/hnap_service；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A2-0004",
+            "id": "E-A2-0002",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "usr/sbin/eventd@0x22690",
@@ -432,20 +405,6 @@
             "confidence": 0.4,
             "raw_ref": "webroot_ro/goform/WifiPowerGet.txt:4",
             "detail": "静态发现硬编码 http 外联地址 host=www.baidu.com；域名归属与外联行为未验证 TODO(measure)"
-          },
-          {
-            "id": "E-A3-0014",
-            "level": "E3",
-            "confidence": 0.4,
-            "raw_ref": "webroot_ro/index.html:399",
-            "detail": "静态发现硬编码 http 外联地址 host=wifi.yunos.com；域名归属与外联行为未验证 TODO(measure)"
-          },
-          {
-            "id": "E-A3-0015",
-            "level": "E3",
-            "confidence": 0.4,
-            "raw_ref": "webroot_ro/xunleiDownload.html:40",
-            "detail": "静态发现硬编码 http 外联地址 host=yuancheng.xunlei.com；域名归属与外联行为未验证 TODO(measure)"
           }
         ],
         "rejected": []
@@ -453,147 +412,147 @@
       "UNAUTH_MGMT_ENDPOINT": {
         "found_on": [
           {
-            "id": "E-A3-0016",
+            "id": "E-A3-0014",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4220",
             "detail": "静态发现接口 /cgi-bin/DownloadCfg；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0017",
+            "id": "E-A3-0015",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4238",
             "detail": "静态发现接口 /cgi-bin/DownloadFlash；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0018",
+            "id": "E-A3-0016",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4250",
             "detail": "静态发现接口 /cgi-bin/DownloadSyslog；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0019",
+            "id": "E-A3-0017",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4268",
             "detail": "静态发现接口 /cgi-bin/DownloadLog；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0020",
+            "id": "E-A3-0018",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4b6c",
             "detail": "静态发现接口 /goform/telnet；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0021",
+            "id": "E-A3-0019",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4b88",
             "detail": "静态发现接口 /goform/fast_setting；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0022",
+            "id": "E-A3-0020",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4ba0",
             "detail": "静态发现接口 /goform/ate；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0023",
+            "id": "E-A3-0021",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4bac",
             "detail": "静态发现接口 /goform/InsertWhite；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0024",
+            "id": "E-A3-0022",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4bd0",
             "detail": "静态发现接口 /goform/getWanConnectStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0025",
+            "id": "E-A3-0023",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4bec",
             "detail": "静态发现接口 /goform/getProduct；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0026",
+            "id": "E-A3-0024",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4c00",
             "detail": "静态发现接口 /goform/getRebootStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0027",
+            "id": "E-A3-0025",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4cd4",
             "detail": "静态发现接口 /goform/GetRouterStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0028",
+            "id": "E-A3-0026",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4cec",
             "detail": "静态发现接口 /goform/getWanParameters；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0029",
+            "id": "E-A3-0027",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4d08",
             "detail": "静态发现接口 /goform/GetUSBStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0030",
+            "id": "E-A3-0028",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4d58",
             "detail": "静态发现接口 /goform/WifiApScan；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0031",
+            "id": "E-A3-0029",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "etc_ro/nginx/conf/nginx.conf:48",
             "detail": "静态发现接口 /cgi-bin/luci；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0032",
+            "id": "E-A3-0030",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/directupgrade.html:27",
             "detail": "静态发现接口 /cgi-bin/upgrade；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0033",
+            "id": "E-A3-0031",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/js/dlna.js:134",
             "detail": "静态发现接口 /goform/refreshDLNA；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0034",
+            "id": "E-A3-0032",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/system_backup.html:15",
             "detail": "静态发现接口 /cgi-bin/UploadCfg；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0035",
+            "id": "E-A3-0033",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/system_password.html:15",
             "detail": "静态发现接口 /goform/SysToolChangePwd；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-0036",
+            "id": "E-A3-0034",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/system_reboot.html:15",
@@ -711,20 +670,6 @@
             "confidence": 0.4,
             "raw_ref": "webroot_ro/goform/WifiPowerGet.txt:4",
             "detail": "静态发现硬编码 http 外联地址 host=www.baidu.com；域名归属与外联行为未验证 TODO(measure)"
-          },
-          {
-            "id": "E-A3-19-0014",
-            "level": "E3",
-            "confidence": 0.4,
-            "raw_ref": "webroot_ro/index.html:406",
-            "detail": "静态发现硬编码 http 外联地址 host=wifi.yunos.com；域名归属与外联行为未验证 TODO(measure)"
-          },
-          {
-            "id": "E-A3-19-0015",
-            "level": "E3",
-            "confidence": 0.4,
-            "raw_ref": "webroot_ro/xunleiDownload.html:40",
-            "detail": "静态发现硬编码 http 外联地址 host=yuancheng.xunlei.com；域名归属与外联行为未验证 TODO(measure)"
           }
         ],
         "rejected": []
@@ -732,112 +677,112 @@
       "UNAUTH_MGMT_ENDPOINT": {
         "found_on": [
           {
-            "id": "E-A3-19-0016",
+            "id": "E-A3-19-0014",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4080",
             "detail": "静态发现接口 /cgi-bin/DownloadCfg；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-19-0017",
+            "id": "E-A3-19-0015",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4098",
             "detail": "静态发现接口 /cgi-bin/DownloadFlash；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-19-0018",
+            "id": "E-A3-19-0016",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd40b0",
             "detail": "静态发现接口 /cgi-bin/DownloadSyslog；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-19-0019",
+            "id": "E-A3-19-0017",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd40c8",
             "detail": "静态发现接口 /cgi-bin/DownloadLog；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-19-0020",
+            "id": "E-A3-19-0018",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4a20",
             "detail": "静态发现接口 /goform/telnet；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-19-0021",
+            "id": "E-A3-19-0019",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4a30",
             "detail": "静态发现接口 /goform/ate；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-19-0022",
+            "id": "E-A3-19-0020",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4a84",
             "detail": "静态发现接口 /goform/GetRouterStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-19-0023",
+            "id": "E-A3-19-0021",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4a9c",
             "detail": "静态发现接口 /goform/getWanParameters；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-19-0024",
+            "id": "E-A3-19-0022",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4ab8",
             "detail": "静态发现接口 /goform/GetUSBStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-19-0025",
+            "id": "E-A3-19-0023",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd4b20",
             "detail": "静态发现接口 /goform/WifiApScan；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-19-0026",
+            "id": "E-A3-19-0024",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "etc_ro/nginx/conf/nginx.conf:48",
             "detail": "静态发现接口 /cgi-bin/luci；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-19-0027",
+            "id": "E-A3-19-0025",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/directupgrade.html:27",
             "detail": "静态发现接口 /cgi-bin/upgrade；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-19-0028",
+            "id": "E-A3-19-0026",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/js/dlna.js:134",
             "detail": "静态发现接口 /goform/refreshDLNA；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-19-0029",
+            "id": "E-A3-19-0027",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/system_backup.html:15",
             "detail": "静态发现接口 /cgi-bin/UploadCfg；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-19-0030",
+            "id": "E-A3-19-0028",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/system_password.html:15",
             "detail": "静态发现接口 /goform/SysToolChangePwd；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-A3-19-0031",
+            "id": "E-A3-19-0029",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/system_reboot.html:15",
@@ -851,7 +796,7 @@
       "CRED_DEFAULT_SERVICE_LOGIN": {
         "found_on": [
           {
-            "id": "E-C1t-0001",
+            "id": "E-C1-0001",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "etc/passwd:1",
@@ -860,20 +805,10 @@
         ],
         "rejected": []
       },
-      "EGRESS_FIXED_CLOUD_ENDPOINT": {
-        "found_on": [],
-        "rejected": [
-          {
-            "id": "E-C1t-0002",
-            "raw_ref": "etc/protocols:3",
-            "reason": "etc/protocols 里的 IANA 规范注释地址"
-          }
-        ]
-      },
       "UNAUTH_MGMT_ENDPOINT": {
         "found_on": [
           {
-            "id": "E-C1t-0003",
+            "id": "E-C1-0002",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "usr/sbin/uhttpd@0xeff0",
@@ -887,7 +822,7 @@
       "CRED_DEFAULT_SERVICE_LOGIN": {
         "found_on": [
           {
-            "id": "E-C2t-0001",
+            "id": "E-C2-0001",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "etc/passwd:1",
@@ -897,31 +832,23 @@
         "rejected": []
       },
       "CRED_HARDCODED_SECRET": {
-        "found_on": [],
-        "rejected": [
+        "found_on": [
           {
-            "id": "E-C2t-0002",
-            "raw_ref": "etc/init.d/wlan-manager:6",
-            "reason": "RADIO_PASS=\"radio:P;\" 是工厂测试响应标记（P=pass），非口令；长度 7 与 radio:P 吻合"
+            "id": "E-C2-0002",
+            "level": "E3",
+            "confidence": 0.5,
+            "raw_ref": "etc/init.d/wlan-manager:118",
+            "detail": "静态发现口令字段 radio_pass（值已脱敏，长度 1）；是否默认/可用待实测 TODO(measure)"
           }
-        ]
-      },
-      "EGRESS_FIXED_CLOUD_ENDPOINT": {
-        "found_on": [],
-        "rejected": [
-          {
-            "id": "E-C2t-0003",
-            "raw_ref": "etc/protocols:3",
-            "reason": "etc/protocols 里的 IANA 规范注释地址"
-          }
-        ]
+        ],
+        "rejected": []
       }
     },
     "C3": {
       "CRED_DEFAULT_SERVICE_LOGIN": {
         "found_on": [
           {
-            "id": "E-C3t-0001",
+            "id": "E-C3-0001",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "etc/passwd:1",
@@ -931,31 +858,23 @@
         "rejected": []
       },
       "CRED_HARDCODED_SECRET": {
-        "found_on": [],
-        "rejected": [
+        "found_on": [
           {
-            "id": "E-C3t-0002",
-            "raw_ref": "etc/init.d/wlan-manager:6",
-            "reason": "同 C2：RADIO_PASS=\"radio:P;\" 为工厂测试标记，非口令"
+            "id": "E-C3-0002",
+            "level": "E3",
+            "confidence": 0.5,
+            "raw_ref": "etc/init.d/wlan-manager:118",
+            "detail": "静态发现口令字段 radio_pass（值已脱敏，长度 1）；是否默认/可用待实测 TODO(measure)"
           }
-        ]
-      },
-      "EGRESS_FIXED_CLOUD_ENDPOINT": {
-        "found_on": [],
-        "rejected": [
-          {
-            "id": "E-C3t-0003",
-            "raw_ref": "etc/protocols:3",
-            "reason": "etc/protocols 里的 IANA 规范注释地址"
-          }
-        ]
+        ],
+        "rejected": []
       }
     },
     "C4": {
       "CRED_DEFAULT_SERVICE_LOGIN": {
         "found_on": [
           {
-            "id": "E-C4t-0001",
+            "id": "E-C4-0001",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "etc/passwd:1",
@@ -965,29 +884,21 @@
         "rejected": []
       },
       "CRED_HARDCODED_SECRET": {
-        "found_on": [],
-        "rejected": [
+        "found_on": [
           {
-            "id": "E-C4t-0002",
-            "raw_ref": "etc/init.d/wlan-manager:6",
-            "reason": "同 C2：RADIO_PASS=\"radio:P;\" 为工厂测试标记，非口令"
+            "id": "E-C4-0002",
+            "level": "E3",
+            "confidence": 0.5,
+            "raw_ref": "etc/init.d/wlan-manager:118",
+            "detail": "静态发现口令字段 radio_pass（值已脱敏，长度 1）；是否默认/可用待实测 TODO(measure)"
           }
-        ]
-      },
-      "EGRESS_FIXED_CLOUD_ENDPOINT": {
-        "found_on": [],
-        "rejected": [
-          {
-            "id": "E-C4t-0003",
-            "raw_ref": "etc/protocols:3",
-            "reason": "etc/protocols 里的 IANA 规范注释地址"
-          }
-        ]
+        ],
+        "rejected": []
       },
       "UNAUTH_MGMT_ENDPOINT": {
         "found_on": [
           {
-            "id": "E-C4t-0004",
+            "id": "E-C4-0003",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "usr/sbin/uhttpd@0xda55",
@@ -1010,20 +921,10 @@
         ],
         "rejected": []
       },
-      "EGRESS_FIXED_CLOUD_ENDPOINT": {
-        "found_on": [],
-        "rejected": [
-          {
-            "id": "E-C5-0002",
-            "raw_ref": "etc/protocols:3",
-            "reason": "etc/protocols 里的 IANA 规范注释地址"
-          }
-        ]
-      },
       "UNAUTH_MGMT_ENDPOINT": {
         "found_on": [
           {
-            "id": "E-C5-0003",
+            "id": "E-C5-0002",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "usr/sbin/uhttpd@0xef70",
@@ -1141,20 +1042,6 @@
             "confidence": 0.4,
             "raw_ref": "webroot_ro/goform/WifiPowerGet.txt:4",
             "detail": "静态发现硬编码 http 外联地址 host=www.baidu.com；域名归属与外联行为未验证 TODO(measure)"
-          },
-          {
-            "id": "E-R1-0014",
-            "level": "E3",
-            "confidence": 0.4,
-            "raw_ref": "webroot_ro/index.html:399",
-            "detail": "静态发现硬编码 http 外联地址 host=wifi.yunos.com；域名归属与外联行为未验证 TODO(measure)"
-          },
-          {
-            "id": "E-R1-0015",
-            "level": "E3",
-            "confidence": 0.4,
-            "raw_ref": "webroot_ro/xunleiDownload.html:40",
-            "detail": "静态发现硬编码 http 外联地址 host=yuancheng.xunlei.com；域名归属与外联行为未验证 TODO(measure)"
           }
         ],
         "rejected": []
@@ -1162,147 +1049,147 @@
       "UNAUTH_MGMT_ENDPOINT": {
         "found_on": [
           {
-            "id": "E-R1-0016",
+            "id": "E-R1-0014",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd2578",
             "detail": "静态发现接口 /cgi-bin/DownloadCfg；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0017",
+            "id": "E-R1-0015",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd2590",
             "detail": "静态发现接口 /cgi-bin/DownloadFlash；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0018",
+            "id": "E-R1-0016",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd25a8",
             "detail": "静态发现接口 /cgi-bin/DownloadSyslog；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0019",
+            "id": "E-R1-0017",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd25c0",
             "detail": "静态发现接口 /cgi-bin/DownloadLog；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0020",
+            "id": "E-R1-0018",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd2ec4",
             "detail": "静态发现接口 /goform/telnet；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0021",
+            "id": "E-R1-0019",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd2ee0",
             "detail": "静态发现接口 /goform/fast_setting；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0022",
+            "id": "E-R1-0020",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd2ef8",
             "detail": "静态发现接口 /goform/ate；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0023",
+            "id": "E-R1-0021",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd2f04",
             "detail": "静态发现接口 /goform/InsertWhite；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0024",
+            "id": "E-R1-0022",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd2f28",
             "detail": "静态发现接口 /goform/getWanConnectStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0025",
+            "id": "E-R1-0023",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd2f44",
             "detail": "静态发现接口 /goform/getProduct；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0026",
+            "id": "E-R1-0024",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd2f58",
             "detail": "静态发现接口 /goform/getRebootStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0027",
+            "id": "E-R1-0025",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd302c",
             "detail": "静态发现接口 /goform/GetRouterStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0028",
+            "id": "E-R1-0026",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd3044",
             "detail": "静态发现接口 /goform/getWanParameters；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0029",
+            "id": "E-R1-0027",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd3060",
             "detail": "静态发现接口 /goform/GetUSBStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0030",
+            "id": "E-R1-0028",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd30b0",
             "detail": "静态发现接口 /goform/WifiApScan；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0031",
+            "id": "E-R1-0029",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "etc_ro/nginx/conf/nginx.conf:48",
             "detail": "静态发现接口 /cgi-bin/luci；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0032",
+            "id": "E-R1-0030",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/directupgrade.html:27",
             "detail": "静态发现接口 /cgi-bin/upgrade；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0033",
+            "id": "E-R1-0031",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/js/dlna.js:134",
             "detail": "静态发现接口 /goform/refreshDLNA；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0034",
+            "id": "E-R1-0032",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/system_backup.html:15",
             "detail": "静态发现接口 /cgi-bin/UploadCfg；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0035",
+            "id": "E-R1-0033",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/system_password.html:15",
             "detail": "静态发现接口 /goform/SysToolChangePwd；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R1-0036",
+            "id": "E-R1-0034",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/system_reboot.html:15",
@@ -1420,20 +1307,6 @@
             "confidence": 0.4,
             "raw_ref": "webroot_ro/goform/WifiPowerGet.txt:4",
             "detail": "静态发现硬编码 http 外联地址 host=www.baidu.com；域名归属与外联行为未验证 TODO(measure)"
-          },
-          {
-            "id": "E-R2-0014",
-            "level": "E3",
-            "confidence": 0.4,
-            "raw_ref": "webroot_ro/index.html:399",
-            "detail": "静态发现硬编码 http 外联地址 host=wifi.yunos.com；域名归属与外联行为未验证 TODO(measure)"
-          },
-          {
-            "id": "E-R2-0015",
-            "level": "E3",
-            "confidence": 0.4,
-            "raw_ref": "webroot_ro/xunleiDownload.html:40",
-            "detail": "静态发现硬编码 http 外联地址 host=yuancheng.xunlei.com；域名归属与外联行为未验证 TODO(measure)"
           }
         ],
         "rejected": []
@@ -1441,140 +1314,140 @@
       "UNAUTH_MGMT_ENDPOINT": {
         "found_on": [
           {
-            "id": "E-R2-0016",
+            "id": "E-R2-0014",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd048c",
             "detail": "静态发现接口 /cgi-bin/DownloadCfg；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0017",
+            "id": "E-R2-0015",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd04a4",
             "detail": "静态发现接口 /cgi-bin/DownloadFlash；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0018",
+            "id": "E-R2-0016",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd04bc",
             "detail": "静态发现接口 /cgi-bin/DownloadSyslog；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0019",
+            "id": "E-R2-0017",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd04d4",
             "detail": "静态发现接口 /cgi-bin/DownloadLog；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0020",
+            "id": "E-R2-0018",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd0dd8",
             "detail": "静态发现接口 /goform/telnet；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0021",
+            "id": "E-R2-0019",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd0df4",
             "detail": "静态发现接口 /goform/fast_setting；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0022",
+            "id": "E-R2-0020",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd0e0c",
             "detail": "静态发现接口 /goform/ate；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0023",
+            "id": "E-R2-0021",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd0e18",
             "detail": "静态发现接口 /goform/InsertWhite；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0024",
+            "id": "E-R2-0022",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd0e3c",
             "detail": "静态发现接口 /goform/getWanConnectStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0025",
+            "id": "E-R2-0023",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd0e58",
             "detail": "静态发现接口 /goform/getProduct；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0026",
+            "id": "E-R2-0024",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd0e6c",
             "detail": "静态发现接口 /goform/getRebootStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0027",
+            "id": "E-R2-0025",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd0f40",
             "detail": "静态发现接口 /goform/GetRouterStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0028",
+            "id": "E-R2-0026",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd0f58",
             "detail": "静态发现接口 /goform/getWanParameters；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0029",
+            "id": "E-R2-0027",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd0f74",
             "detail": "静态发现接口 /goform/GetUSBStatus；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0030",
+            "id": "E-R2-0028",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "bin/httpd@0xd0fc4",
             "detail": "静态发现接口 /goform/WifiApScan；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0031",
+            "id": "E-R2-0029",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/directupgrade.html:27",
             "detail": "静态发现接口 /cgi-bin/upgrade；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0032",
+            "id": "E-R2-0030",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/js/dlna.js:134",
             "detail": "静态发现接口 /goform/refreshDLNA；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0033",
+            "id": "E-R2-0031",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/system_backup.html:15",
             "detail": "静态发现接口 /cgi-bin/UploadCfg；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0034",
+            "id": "E-R2-0032",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/system_password.html:15",
             "detail": "静态发现接口 /goform/SysToolChangePwd；鉴权状态未验证，需影子设备实测 TODO(measure)"
           },
           {
-            "id": "E-R2-0035",
+            "id": "E-R2-0033",
             "level": "E3",
             "confidence": 0.3,
             "raw_ref": "webroot_ro/system_reboot.html:15",
@@ -1584,37 +1457,6 @@
         "rejected": []
       }
     },
-    "R3": {
-      "EGRESS_FIXED_CLOUD_ENDPOINT": {
-        "found_on": [],
-        "rejected": [
-          {
-            "id": "E-R3-0001",
-            "raw_ref": "etc/ethertypes:7",
-            "reason": "etc/ethertypes 里的 IANA 规范注释地址"
-          },
-          {
-            "id": "E-R3-0002",
-            "raw_ref": "etc/init.d/p910nd:113",
-            "reason": "p910nd 脚本里的 LANANA 规范注释地址"
-          },
-          {
-            "id": "E-R3-0003",
-            "raw_ref": "etc/init.d/p910nd:28",
-            "reason": "p910nd 脚本里的 LinuxBase 规范注释地址"
-          },
-          {
-            "id": "E-R3-0004",
-            "raw_ref": "etc/services:8",
-            "reason": "etc/services 里的 FreeBSD 规范注释地址"
-          },
-          {
-            "id": "E-R3-0005",
-            "raw_ref": "sbin/tr069@0x65c40",
-            "reason": "TR-069 数据模型命名空间，不是 ACS 地址"
-          }
-        ]
-      }
-    }
+    "R3": {}
   }
 }

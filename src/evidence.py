@@ -124,6 +124,7 @@ _SKIP_HOSTS = frozenset(
         "gsgd.co.uk",
         "ietf.org",
         "iptc.org",
+        "iana.org",
         "javascript.crockford.com",
         "johnculviner.com",
         "jquery.com",
@@ -131,6 +132,9 @@ _SKIP_HOSTS = frozenset(
         "jqueryui.com",
         "json.org",
         "kernel.org",
+        "lanana.org",
+        "linuxbase.org",
+        "freebsd.org",
         "localhost",
         "macromedia.com",
         "ns.adobe.com",
@@ -174,10 +178,15 @@ _SKIP_HOST_SUFFIXES = (
     ".adobe.com",
     ".apache.org",
     ".busybox.net",
+    ".broadband-forum.org",
+    ".freebsd.org",
     ".gnu.org",
+    ".iana.org",
     ".jquery.com",
     ".jquery.org",
     ".kernel.org",
+    ".lanana.org",
+    ".linuxbase.org",
     ".opensource.org",
     ".python.org",
     ".sizzlejs.com",
@@ -344,6 +353,8 @@ def _looks_like_placeholder(value: str) -> bool:
     value = value.strip().strip("\"'")
     if not value:
         return True
+    if value.startswith(("`", "$(", "userconfig")):
+        return True
     if value.lower() in {
         "change_me",
         "changeme",
@@ -361,6 +372,21 @@ def _looks_like_placeholder(value: str) -> bool:
     }:
         return True
     return any(ch in value for ch in "$%{}<>")
+
+
+def _looks_like_status_token(value: str) -> bool:
+    """排除 RADIO_PASS="radio:P;" 这类工厂测试/状态标记。"""
+    value = value.strip().strip("\"'")
+    if value.lower() in {"ok", "pass", "fail", "on", "off", "yes", "no"}:
+        return True
+    return re.fullmatch(r"[A-Za-z][A-Za-z0-9_]*:[A-Za-z];?", value) is not None
+
+
+def _is_help_link(rel: Path, line: str) -> bool:
+    """HTML 帮助页里的 <a href=...> 是文档链接，不是设备外联端点。"""
+    if rel.suffix.lower() not in {".asp", ".htm", ".html"}:
+        return False
+    return re.search(r"(?i)<a\b[^>]*\bhref\s*=", line) is not None
 
 
 def _endpoint_clean(raw: str) -> str:
@@ -499,7 +525,7 @@ def _scan_literal_secrets(root: Path) -> list[_Finding]:
             if match is None:
                 continue
             value = match.group("value")
-            if _looks_like_placeholder(value):
+            if _looks_like_placeholder(value) or _looks_like_status_token(value):
                 continue
             key = match.group("key").lower()
             check_code = _credential_check_code(key, rel)
@@ -602,6 +628,8 @@ def _scan_text_egress(root: Path, seen_hosts: set[str]) -> list[_Finding]:
         if text is None or _is_rule_database(text):
             continue
         for lineno, line in enumerate(text.splitlines(), 1):
+            if _is_help_link(rel, line):
+                continue
             for match in _URL_RE.finditer(line):
                 url = _clean_url(match.group())
                 host = _url_host(url)

@@ -1,10 +1,10 @@
 {
   "firmware_id": "C5",
-  "rootfs": "/mnt/e/dsh_talking/firmware-admission/data/firmware/_Tapo_C200v1_en_1.1.16_Build_211209_Rel.37726n__1640684337995.extracted/_Tapo_C200v1_en_1.1.16_Build_211209_Rel.37726n__1640684337995.bin.extracted/squashfs-root",
+  "rootfs": "/home/rmua/t12/regen_evidence/C5/_Tapo_C200v1_en_1.1.16_Build_211209_Rel.37726n__1640684337995.extracted/_Tapo_C200v1_en_1.1.16_Build_211209_Rel.37726n__1640684337995.bin.extracted/squashfs-root",
   "counts": {
     "CRED": 1,
     "UNAUTH": 1,
-    "EGRESS": 1
+    "EGRESS": 0
   },
   "evidence": [
     {
@@ -18,15 +18,6 @@
     },
     {
       "id": "E-C5-0002",
-      "firmware_id": "C5",
-      "check_code": "EGRESS_FIXED_CLOUD_ENDPOINT",
-      "level": "E3",
-      "confidence": 0.4,
-      "raw_ref": "etc/protocols:3",
-      "detail": "静态发现硬编码 http 外联地址 host=www.iana.org；域名归属与外联行为未验证 TODO(measure)"
-    },
-    {
-      "id": "E-C5-0003",
       "firmware_id": "C5",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",

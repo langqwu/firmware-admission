@@ -1,7 +1,7 @@
 {
-  "coverage": 0.4351851851851852,
-  "agreement": 0.8981481481481481,
-  "kappa": 0.7870967741935484,
+  "coverage": 0.3611111111111111,
+  "agreement": 1.0,
+  "kappa": 1.0,
   "decision_accuracy": null,
   "false_block_rate": null,
   "miss_rate": null,

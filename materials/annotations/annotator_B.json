@@ -1,5 +1,5 @@
 {
-  "_note": "B = 苏同学（标注员 B）。本份由 materials/annotations/fill_B_from_evidence.py 依据仓库内已提交的原始取证文件（materials/**/evidence*.json）独立判读生成，生成过程未读取 annotator_A.json、machine_prelabel_A.json 与 decisions/；属 AI 辅助独立标注，由标注员 B 承担结论。有效证据→found，无有效证据→not_tested；无效证据（标准地址/帮助页链接）不参与判定，原因见 annotator_B_核验明细.json。",
+  "_note": "B = 苏同学。2026-11-22 证据规则修正后，由 fill_B_from_evidence.py 仅读新版 evidence 重新生成：39 found / 69 not_tested / 0 clear；未读 A 文件/审计表/decisions；属 AI 辅助独立判读，由标注员 B 承担结论。规则修正后标准 URL/帮助页/运行时口令/工厂测试标记已在源头过滤，不再需要按 ID 事后排除。",
   "annotators": {
     "B": {
       "A1": {
@@ -60,7 +60,7 @@
       "C2": {
         "CRED_DEFAULT_ADMIN_WEB": "not_tested",
         "CRED_DEFAULT_SERVICE_LOGIN": "found",
-        "CRED_HARDCODED_SECRET": "not_tested",
+        "CRED_HARDCODED_SECRET": "found",
         "UNAUTH_MGMT_ENDPOINT": "not_tested",
         "UNAUTH_COMMAND_EXEC": "not_tested",
         "UNAUTH_INFO_DISCLOSURE": "not_tested",
@@ -71,7 +71,7 @@
       "C3": {
         "CRED_DEFAULT_ADMIN_WEB": "not_tested",
         "CRED_DEFAULT_SERVICE_LOGIN": "found",
-        "CRED_HARDCODED_SECRET": "not_tested",
+        "CRED_HARDCODED_SECRET": "found",
         "UNAUTH_MGMT_ENDPOINT": "not_tested",
         "UNAUTH_COMMAND_EXEC": "not_tested",
         "UNAUTH_INFO_DISCLOSURE": "not_tested",
@@ -82,7 +82,7 @@
       "C4": {
         "CRED_DEFAULT_ADMIN_WEB": "not_tested",
         "CRED_DEFAULT_SERVICE_LOGIN": "found",
-        "CRED_HARDCODED_SECRET": "not_tested",
+        "CRED_HARDCODED_SECRET": "found",
         "UNAUTH_MGMT_ENDPOINT": "found",
         "UNAUTH_COMMAND_EXEC": "not_tested",
         "UNAUTH_INFO_DISCLOSURE": "not_tested",

@@ -1,15 +1,15 @@
 {
-  "firmware_id": "C4t",
-  "rootfs": "/mnt/e/dsh_talking/firmware-admission/data/firmware/_Tapo_C310v1_en_1.3.11_Build_231117_Rel.38282n_up_boot-signed_1701154467813.extracted/_Tapo_C310v1_en_1.3.11_Build_231117_Rel.38282n_up_boot-signed_1701154467813.bin.extracted/squashfs-root",
+  "firmware_id": "C4",
+  "rootfs": "/home/rmua/t12/regen_evidence/C4/_Tapo_C310v1_en_1.3.11_Build_231117_Rel.38282n_up_boot-signed_1701154467813.extracted/_Tapo_C310v1_en_1.3.11_Build_231117_Rel.38282n_up_boot-signed_1701154467813.bin.extracted/squashfs-root",
   "counts": {
     "CRED": 2,
     "UNAUTH": 1,
-    "EGRESS": 1
+    "EGRESS": 0
   },
   "evidence": [
     {
-      "id": "E-C4t-0001",
-      "firmware_id": "C4t",
+      "id": "E-C4-0001",
+      "firmware_id": "C4",
       "check_code": "CRED_DEFAULT_SERVICE_LOGIN",
       "level": "E3",
       "confidence": 0.3,
@@ -17,26 +17,17 @@
       "detail": "静态发现可登录账号 root（uid=0, shell=/bin/ash）；是否为默认口令待影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-C4t-0002",
-      "firmware_id": "C4t",
+      "id": "E-C4-0002",
+      "firmware_id": "C4",
       "check_code": "CRED_HARDCODED_SECRET",
       "level": "E3",
       "confidence": 0.5,
-      "raw_ref": "etc/init.d/wlan-manager:6",
-      "detail": "静态发现口令字段 radio_pass（值已脱敏，长度 7）；是否默认/可用待实测 TODO(measure)"
+      "raw_ref": "etc/init.d/wlan-manager:118",
+      "detail": "静态发现口令字段 radio_pass（值已脱敏，长度 1）；是否默认/可用待实测 TODO(measure)"
     },
     {
-      "id": "E-C4t-0003",
-      "firmware_id": "C4t",
-      "check_code": "EGRESS_FIXED_CLOUD_ENDPOINT",
-      "level": "E3",
-      "confidence": 0.4,
-      "raw_ref": "etc/protocols:3",
-      "detail": "静态发现硬编码 http 外联地址 host=www.iana.org；域名归属与外联行为未验证 TODO(measure)"
-    },
-    {
-      "id": "E-C4t-0004",
-      "firmware_id": "C4t",
+      "id": "E-C4-0003",
+      "firmware_id": "C4",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
       "confidence": 0.3,

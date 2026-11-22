@@ -2,31 +2,13 @@
   "firmware_id": "A2",
   "rootfs": "/home/rmua/t12/dcs/_extracted/_DCS-960L_A1_FW_1.07.102.bin.extracted/squashfs-root",
   "counts": {
-    "CRED": 1,
+    "CRED": 0,
     "UNAUTH": 2,
-    "EGRESS": 1
+    "EGRESS": 0
   },
   "evidence": [
     {
       "id": "E-A2-0001",
-      "firmware_id": "A2",
-      "check_code": "CRED_HARDCODED_SECRET",
-      "level": "E3",
-      "confidence": 0.5,
-      "raw_ref": "etc/rc.d/init.d/pppoe.sh:8",
-      "detail": "静态发现口令字段 pppoepwd（值已脱敏，长度 11）；是否默认/可用待实测 TODO(measure)"
-    },
-    {
-      "id": "E-A2-0002",
-      "firmware_id": "A2",
-      "check_code": "EGRESS_FIXED_CLOUD_ENDPOINT",
-      "level": "E3",
-      "confidence": 0.4,
-      "raw_ref": "web/cgi-bin/home.asp:619",
-      "detail": "静态发现硬编码 http 外联地址 host=www.dlink.com；域名归属与外联行为未验证 TODO(measure)"
-    },
-    {
-      "id": "E-A2-0003",
       "firmware_id": "A2",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",
@@ -35,7 +17,7 @@
       "detail": "静态发现接口 /hnap/hnap_service；鉴权状态未验证，需影子设备实测 TODO(measure)"
     },
     {
-      "id": "E-A2-0004",
+      "id": "E-A2-0002",
       "firmware_id": "A2",
       "check_code": "UNAUTH_MGMT_ENDPOINT",
       "level": "E3",

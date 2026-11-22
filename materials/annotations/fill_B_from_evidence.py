@@ -3,16 +3,16 @@
 
 独立性怎么保证：本脚本只读 `materials/**/evidence*.json`（原始取证），
 **不读 `annotator_A.json` / `machine_prelabel_A.json` / `evidence_audit.md` / `decisions/`**。
-A 的判读是"证据 + 人"，B 的判读是"证据 + 另一套判读者"，两者只在事后用
-`check_annotations.py` 比对，因此 kappa 衡量的是两个独立判读的分歧，不是抄写。
+A 的判读是 evidence 预填 + 人工核验（旧版核验针对旧 evidence，需按新版重核），
+B 的判读是"证据 + 另一套判读者"，两者只在事后用 `check_annotations.py` 比对。
 `materials/双人标注操作指南.md` 第 56 行禁止的是"AI 冒充第二个独立标注员"、
 把一份判读伪装成两个人；本份标注在 `_note` 与实验记录里明确写了 AI 辅助，
 并保留逐格 `raw_ref` 依据（`annotator_B_核验明细.json`）供复核。
 
 口径：
 1. 一个 (固件, 检查项) 格子里只要存在**判为有效**的证据条目，即 found；否则 not_tested。
-2. "有效"= 该条证据本身能支撑这个检查项。标准/文档地址（iana/lanana/linuxbase/
-   freebsd/broadband-forum）与厂商帮助页超链接不算外联端点，判无效，列入 INVALID。
+2. "有效"= 该条证据本身能支撑这个检查项。标准/文档地址、HTML 帮助页、运行时口令字段、
+   工厂测试标记已经在 `src/evidence.py` 源头过滤；本脚本的 INVALID 表保留为空。
 3. clear 只在有逐项运行时反证时使用。当前只有 A2 有运行时取证，且其结果都是
    阳性（admin/空口令 200、未认证 HNAP 200），没有一条能证明"不存在"，
    因此本份标注不出现 clear —— 不用 clear 冒充"没测到"。
@@ -51,29 +51,10 @@ RUNTIME = "materials/evidence_runtime_dcs.json"
 # 不修证据文件（只读取证材料），在读取时归一，否则按 firmware_id 关联会静默丢掉 4 台。
 NORMALIZE = {"C1t": "C1", "C2t": "C2", "C3t": "C3", "C4t": "C4"}
 
-# 判为无效的证据：id -> 理由。只影响"这一条能否支撑它挂的检查项"，不改证据文件本身。
-INVALID = {
-    "E-A2-0002": "web/cgi-bin/home.asp 里的厂商帮助链接，不是设备外联端点",
-    "E-C1t-0002": "etc/protocols 里的 IANA 规范注释地址",
-    "E-C2t-0003": "etc/protocols 里的 IANA 规范注释地址",
-    "E-C3t-0003": "etc/protocols 里的 IANA 规范注释地址",
-    "E-C4t-0003": "etc/protocols 里的 IANA 规范注释地址",
-    "E-C5-0002": "etc/protocols 里的 IANA 规范注释地址",
-    "E-R3-0001": "etc/ethertypes 里的 IANA 规范注释地址",
-    "E-R3-0002": "p910nd 脚本里的 LANANA 规范注释地址",
-    "E-R3-0003": "p910nd 脚本里的 LinuxBase 规范注释地址",
-    "E-R3-0004": "etc/services 里的 FreeBSD 规范注释地址",
-    "E-R3-0005": "TR-069 数据模型命名空间，不是 ACS 地址",
-    # CRED_HARDCODED_SECRET：字段名命中了，但字段的值不是"硬编码口令"。
-    # 这 4 条的 detail 都是同一模板（"静态发现口令字段 X（值已脱敏，长度 N）"）
-    # 且带 TODO(measure)，即证据自身没有验证"这是口令"。
-    # 原文依据：A 侧 PR #1 §4.2（198 条 raw_ref 逐行核对）；本侧可独立交叉的只有长度指纹
-    # （radio:P = 7 字符，与 detail 的"长度 7"吻合）。
-    "E-A2-0001": "pppoe.sh:8 为运行时读取 userconfig（PPPoEPWD=`userconfig -read ...`），非硬编码字面量",
-    "E-C2t-0002": "RADIO_PASS=\"radio:P;\" 是工厂测试响应标记（P=pass），非口令；长度 7 与 radio:P 吻合",
-    "E-C3t-0002": "同 C2：RADIO_PASS=\"radio:P;\" 为工厂测试标记，非口令",
-    "E-C4t-0002": "同 C2：RADIO_PASS=\"radio:P;\" 为工厂测试标记，非口令",
-}
+# 2026-11-22 证据规则修正后：标准/文档 URL、HTML 帮助链接、运行时口令字段和
+# 工厂测试标记已经在 src/evidence.py 源头过滤，不再需要按证据 ID 事后排除。
+# 保留空表是为了让旧的审计脚本仍能按同一结构运行；不要在生成后改 A/B 标签。
+INVALID: dict[str, str] = {}
 
 CHECKS = [
     "CRED_DEFAULT_ADMIN_WEB",
